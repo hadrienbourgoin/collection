@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   root to: "compilations#index"
-  resources :compilations do
-    resources :items
-  end
+  resources :compilations
+  get '/advancedsearch', to: 'compilations#advancedsearch'
+  get '/activityfeed', to: 'compilations#activityfeed'
 end
