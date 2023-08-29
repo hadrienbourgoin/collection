@@ -1,0 +1,38 @@
+<% if user_signed_in? %>
+  <% if @browse %>
+    <% if current_user.compilations.count.positive? %>
+      <% compilations = @compilations.reject { |compilation| current_user.compilations.include?(compilation) } %>
+    <% end %>
+    <% if @compilations.count.positive? %>
+    <% @compilations.each do |compilation| %>
+      <div class="card">
+        <a href= <%= compilation_path(compilation) %> >
+          <p><%= compilation.name %></p>
+        </a>
+      </div>
+    <% end %>
+  <% end %>
+  <% else %>
+    <% if current_user.compilations.count.positive? %>
+      <% current_user.compilations.each do |compilation| %>
+        <div class="card">
+          <a href= <%= compilation_path(compilation) %> >
+            <p><%= compilation.name %></p>
+          </a>
+        </div>
+      <% end %>
+    <% else %>
+      <p>Upload here</p>
+    <% end %>
+  <% end %>
+<% else %>
+  <% if @compilations.count.positive? %>
+    <% @compilations.each do |compilation| %>
+      <div class="card">
+        <a href= <%= compilation_path(compilation) %> >
+          <p><%= compilation.name %></p>
+        </a>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
