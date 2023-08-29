@@ -3,11 +3,8 @@ class CompilationsController < ApplicationController
 
   def index
     @compilations = Compilation.all
-    if params[:browse] == "true"
-      @browse = true
-    else
-      @browse = false
-    end
+    @browse = true if params[:browse] == "true"
+    @new = true if params[:new] == "true"
   end
   
   def show
