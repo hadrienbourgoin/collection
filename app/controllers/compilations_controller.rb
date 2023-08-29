@@ -9,7 +9,7 @@ class CompilationsController < ApplicationController
       @browse = false
     end
   end
-
+  
   def show
     @compilation.user = current_user
   end
