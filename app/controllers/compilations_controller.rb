@@ -8,6 +8,8 @@ class CompilationsController < ApplicationController
     end
   end
 
+  private
+
   def compilation_params
     params.require(:compilation).permit(:name, :description, :public)
   end
