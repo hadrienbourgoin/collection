@@ -6,7 +6,7 @@
     <% end %>
     <% if compilations.count.positive? %>
       <% compilations.each do |compilation| %>
-        <div class="card">
+        <div class="card-index">
           <a href= <%= compilation_path(compilation) %> >
             <p><%= compilation.name %></p>
           </a>
@@ -19,7 +19,7 @@
     <% else %>
       <% if current_user.compilations.count.positive? %>
         <% current_user.compilations.each do |compilation| %>
-          <div class="card">
+          <div class="card-index">
             <a href= <%= compilation_path(compilation) %> >
               <p><%= compilation.name %></p>
             </a>
@@ -33,7 +33,7 @@
 <% else %>
   <% if @compilations.count.positive? %>
     <% @compilations.each do |compilation| %>
-      <div class="card">
+      <div class="card-index">
         <a href= <%= compilation_path(compilation) %> >
           <p><%= compilation.name %></p>
         </a>
