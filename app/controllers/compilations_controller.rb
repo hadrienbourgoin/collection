@@ -1,20 +1,20 @@
 class CompilationsController < ApplicationController
-  before_action :set_compilation, only: [:show, :edit, :update]
+  before_action :set_compilation, only: %i[show edit update]
 
   def index
     @compilations = Compilation.all
     @browse = true if params[:browse] == "true"
     @new = true if params[:new] == "true"
   end
-  
+
   def show
     @compilation.user = current_user
   end
- 
+
   def new
     @compilation = Compilation.new
   end
-  
+
   def create
     @compilation = Compilation.new(compilation_params)
     @compilation.user = current_user
