@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   root to: "compilations#index"
   resources :compilations
   get '/advancedsearch', to: 'compilations#advancedsearch'
-  get '/activityfeed', to: 'compilations#activityfeed'
+  get '/activityfeed', to: 'items#activity_feed'
 end
