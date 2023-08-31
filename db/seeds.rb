@@ -92,6 +92,10 @@ Tag.create!(word: "Blue")
 Tag.create!(word: "Movie")
 
 ItemsTag.destroy_all
+3.times do
+  ItemsTag.create!(item: Item.first,
+                   tag: Tag.all.sample)
+end
 10.times do
   ItemsTag.create!(item: Item.all.sample,
                    tag: Tag.all.sample)

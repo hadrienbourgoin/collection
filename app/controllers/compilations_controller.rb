@@ -1,10 +1,18 @@
 class CompilationsController < ApplicationController
-  before_action :set_compilation, only: [:show, :edit, :update]
+  before_action :set_compilation, only: %i[show edit update]
 
   def index
     @compilations = Compilation.all
-    @browse = true if params[:browse] == "true"
-    @new = true if params[:new] == "true"
+    if params[:browse] == 'true'
+      @browse = true
+      if user_signed_in?
+        @compilations = Compilation.all.reject { |compilation| current_user.compilations.include?(compilation) }
+      end
+    elsif params[:new] == 'true'
+      @compilations = []
+      @new = true
+      @must_log_in = true unless user_signed_in?
+    end
   end
 
   def show
@@ -37,12 +45,6 @@ class CompilationsController < ApplicationController
     end
   end
 
-  private
-
-  def set_compilation
-    @compilation = Compilation.find(params[:id])
-  end
-
   def destroy
     @compilation = Compilation.find(params[:id])
     @compilation.destroy
@@ -50,6 +52,10 @@ class CompilationsController < ApplicationController
   end
 
   private
+
+  def set_compilation
+    @compilation = Compilation.find(params[:id])
+  end
 
   def compilation_params
     params.require(:compilation).permit(:name, :description, :public)

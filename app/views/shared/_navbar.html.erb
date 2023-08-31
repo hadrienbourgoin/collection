@@ -1,19 +1,15 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <%= link_to compilations_path, class: "navbar-brand" do %>
-      <%= image_tag "logo.png" %>
-    <% end %>
+  <%= link_to compilations_path, class: "navbar-brand" do %>
+    <%= image_tag "logo.png" %>
+  <% end %>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <div class="row justify-content-center search-container">
-          <div class="col-sm-8 search-inner-container">
-          </div>
-        </div>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto nav-right">
+      <div class="nav-links">
         <li class="nav-item active">
           <%= link_to "Browse Collections", compilations_path(browse: "true"), class: "nav-link" %>
         </li>
@@ -23,10 +19,12 @@
         <li class="nav-item active">
           <%= link_to "Activity feed", activityfeed_path, class: "nav-link" %>
         </li>
+        <li class="nav-item active">
+          <%= link_to "Create a new collection", compilations_path(new: "true"), class: "nav-link" %>
+        </li>
+      </div>
+      <div class="nav-user">
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Create a new collection", compilations_path(new: "true"), class: "nav-link" %>
-          </li>
           <li class="nav-item dropdown">
             <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <%= image_tag current_user.photo, class: "avatar", alt: "dropdown menu" %>
@@ -43,7 +41,7 @@
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
           </li>
         <% end %>
-      </ul>
-    </div>
+      </div>
+    </ul>
   </div>
 </div>
