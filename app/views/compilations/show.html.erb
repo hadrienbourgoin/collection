@@ -1,6 +1,22 @@
-<ul>
-    <li><%= @compilation.name %></li>
-    <li><%= @compilation.description %></li>
-    <li><%= @compilation.public %></li>
-    <%= link_to "Edit collection", edit_compilation_path(@compilation) %>
-</ul>
+<div class="super-container-flex">
+  <h3><%= @compilation.name %> </h3><span>public: <%= @compilation.public %></span>
+</div>
+<div class="super-container-flex">
+  <h6>owner: <%= @compilation.user.username %></h6>
+  <p><%= @compilation.description %></p>
+</div>
+
+<% if current_user == @compilation.user %>
+  <div class="super-container-flex">
+    <%= link_to "Edit collection", edit_compilation_path(@compilation), class: "super-button" %>
+    <%= link_to "Delete", "#{compilations_path}/#{@compilation.id}", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "super-button" %>
+  </div>
+<% end %>
+
+<% if @compilation.items.count.positive? %>
+  <%= render "list_items", compilation: @items %>
+<% else %>
+  <% image = 'http://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/uia1q3kadakall0js4xw.png' %>
+  <div class="card-item" style="background-image: url(<%= image %>)">
+  </div>
+<% end %>
