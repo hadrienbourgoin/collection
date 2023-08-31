@@ -8,6 +8,8 @@ class CompilationsController < ApplicationController
       if user_signed_in?
         @compilations = Compilation.all.reject { |compilation| current_user.compilations.include?(compilation) }
       end
+    elsif params[:user_id]
+      @compilations = @compilations.where(user_id: params[:user_id])
     elsif params[:new] == 'true'
       @compilations = []
       @new = true
