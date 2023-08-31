@@ -9,6 +9,8 @@ class CompilationsController < ApplicationController
       elsif params[:new] == 'true'
         @compilations = []
       end
+    elsif params[:user_id]
+      @compilations = @compilations.where(user_id: params[:user_id])
     elsif params[:new] == 'true'
       redirect_to new_user_session_path
     else
