@@ -6,15 +6,15 @@ class CompilationsController < ApplicationController
     @browse = true if params[:browse] == "true"
     @new = true if params[:new] == "true"
   end
-  
+
   def show
     @compilation.user = current_user
   end
- 
+
   def new
     @compilation = Compilation.new
   end
-  
+
   def create
     @compilation = Compilation.new(compilation_params)
     @compilation.user = current_user
@@ -35,7 +35,6 @@ class CompilationsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-
   end
 
   private
