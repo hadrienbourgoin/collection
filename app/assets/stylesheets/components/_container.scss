@@ -1,14 +1,19 @@
 .super-container-flex {
   display: flex;
   margin: 16px;
+  align-items: center;
 
   * {
     margin-right: 8px;
-    line-height: 16px;
+    margin-bottom: 0;
   }
 }
 
 .container-vertical {
   margin-top: 16px;
   margin-bottom: 16px;
+}
+
+.super-flex {
+  display: flex;
 }

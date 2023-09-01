@@ -20,35 +20,3 @@
   <div class="card-item maxwidth-400" style="background-image: url(<%= image %>)">
   </div>
 <% end %>
-
-<!-- Button trigger modal -->
-<% @compilation.items.each do |item| %>
-  <button type="button" class="btn super-button" data-bs-toggle="modal" data-bs-target="#<%= item.id %>">
-    <%= cl_image_tag(item.photo.key,width: 400, height: 300, crop: :fill) %>
-  </button>
-  <div class="modal fade" id="<%= item.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel"><%= item.name %></h1>
-          <button type="button" class="btn-close super-button" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-flex d-flex">
-          <div class="modal-img">
-            <%= cl_image_tag(item.photo.key,crop: :fill, class:"modal-image") %>
-          </div>
-          <div class="modal-text d-flex flex-column justify-content-between p-4">
-            <div>
-              <p><b><%= item.compilation.user.username %></b></p>
-              <p><%= item.description %></p>
-              <p class="colortext"><% item.tags.each do  |tag|   %>
-                #<%= tag.word %>
-              <% end %></p>
-            </div>
-            <%= item.created_at.strftime("%B-%d-%Y") %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-<% end %>

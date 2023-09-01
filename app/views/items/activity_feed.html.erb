@@ -4,11 +4,13 @@
     <div class="card_post ">
       <div class="feedmage">
         <%= link_to compilations_path(user_id: item.compilation.user.id) do %>
-          <%= image_tag item.compilation.user.photo, class: "avatar" %>
+          <div class="super-flex">
+            <%= image_tag item.compilation.user.photo, class: "avatar" %>
+            <div class="feedtaille">
+              <%= item.compilation.user.username %>
+            </div>
+          </div>
         <% end %>
-        <div class="feedtaille">
-          <%= item.compilation.user.username %>
-        </div>
         <button type="button" class="btn super-button btn-right">follow</button>
       </div>
         <div class="write">
