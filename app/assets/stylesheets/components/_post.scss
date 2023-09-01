@@ -1,4 +1,5 @@
 .card_post{
+background-color: white !important;
   font-family: var(--bs-body-font-family);
   display: flex;
   flex-direction: column;
@@ -45,6 +46,7 @@
 }
 
 .posts{
+  background-color: rgb(238, 237, 235);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -72,8 +74,7 @@
 }
 
 .oklike{
-  display: flex;
-  flex-direction: column;
+  text-align: center;
   border-radius: 50% !important;
   background-color: rgb(0, 0, 0);
   width: 25px;
