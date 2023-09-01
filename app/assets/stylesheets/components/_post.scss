@@ -51,7 +51,7 @@ background-color: white !important;
   flex-direction: column;
   align-items: center;
   position: relative;
-  margin: 10px 0px 10px 0px; /* top | right | bottom | left */
+  margin: 0px 0px 0px 0px; /* top | right | bottom | left */
   overflow-y: scroll;
   scroll-timeline: squareTimeline vertical;
   position: relative;
@@ -78,18 +78,30 @@ background-color: white !important;
   height: 25px;
   margin-left:465px !important;
   margin-top: 5px !important;
+
+  i {
+    color: white;
+  }
 }
 
 .okload{
   width: 30px;
   height: 25px;
   margin-left:400px;
-  margin-top: -35px !important;
+  margin-top: -25px !important;
+
+  i {
+    color: black;
+  }
 }
 
 .okshare{
   width: 30px;
   height: 25px;
-  margin-left:110px;
+  margin-left: 110px;
   margin-top: -25px !important;
+
+  i {
+    color: black;
+  }
 }
