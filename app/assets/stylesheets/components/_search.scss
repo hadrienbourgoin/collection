@@ -2,8 +2,8 @@
   margin-right: 4px;
   width: 400px;
   background: white !important;
-  height: 41px;
-  border-radius: 10px;
+  // height: 41px;
+  border-radius: 8px;
   border: 1px solid lightgray;
 }
 
@@ -18,4 +18,10 @@
 }
 .search-btn:hover {
   background: rgba(215, 215, 215, 0.3) !important;
+}
+
+.super-search {
+  position: relative;
+  top: 12.5px;
+  height: 55px
 }

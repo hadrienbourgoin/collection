@@ -17,14 +17,13 @@
           <%= item.name %>
           <%= item.description %>
           <%= item.year %>
-          <%= item.owned %>
         </div>
       <a href= <%= compilation_path(item.compilation) %> >
         <div class="figmage-container" style="background-image: url('<%= cl_image_path item.photo.key, class: "figmage" %>')"></div>
       </a>
         <div class="oklike btn-right">
           <%= link_to compilations_path(user_id: item.compilation.user.id) do %>
-          <i class="fa-solid fa-thumbs-up" style="color: #ffffff;"></i>
+          <i class="fa-solid fa-thumbs-up"></i>
           <% end %>
         </div>
         <div class="okload">

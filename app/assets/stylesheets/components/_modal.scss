@@ -4,9 +4,8 @@
 .modal-image {
   margin: auto;
   display: block;
-  max-width: 70%;
+  max-width: 100%;
   max-height: 85vh;
-  flex-grow: 0;
 }
 
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
@@ -17,4 +16,13 @@
 .modal-text {
   color: var(--bs-body-font-family);
   flex-grow: 1;
+}
+
+.modal-content {
+  min-height: 85vh;
+}
+
+.img-container-modal {
+  background: rgba(0, 0, 0, 0.1);
+  min-height: 85vh;
 }

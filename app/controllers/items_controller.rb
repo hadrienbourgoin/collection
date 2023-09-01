@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_compilation, only: %i[index new create update ]
 
   def activity_feed
-    @items = Item.all.order("created_at DESC")
+    @items = Item.all.order("updated_at DESC")
   end
 
   def new

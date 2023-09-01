@@ -3,33 +3,35 @@ class CompilationsController < ApplicationController
 
   def index
     if user_signed_in?
-      @compilations = current_user.compilations
+      @compilations = current_user.compilations.order('updated_at DESC')
       if params[:browse] == 'true'
-        @compilations = Compilation.where(public: true).all.reject { |compilation| current_user.compilations.include?(compilation) }
+        @compilations = Compilation.where(public: true).all.order('updated_at DESC').reject { |compilation| current_user.compilations.include?(compilation) }
       elsif params[:new] == 'true'
         @compilations = []
+      elsif params[:user_id]
+        @compilations = Compilation.where(public: true).where(user_id: params[:user_id]).order('updated_at DESC')
       end
-    elsif params[:user_id]
-      @compilations = @compilations.where(user_id: params[:user_id])
     elsif params[:new] == 'true'
       redirect_to new_user_session_path
     else
-      @compilations = Compilation.all
+      @compilations = Compilation.all.order('updated_at DESC')
+    end
+    if params[:user_id]
+      @compilations = Compilation.where(public: true).where(user_id: params[:user_id]).order('updated_at DESC')
     end
   end
 
   def show
-    @items = []
+    @items = @compilation.items.order('updated_at DESC')
 
     if params[:query].present?
       sql_subquery = <<~SQL
           items.description ILIKE :query
         OR items.name ILIKE :query
       SQL
-      @items = Item.all.where(sql_subquery, query: "%#{params[:query]}%")
+      @items = Item.all.order('updated_at DESC').where(sql_subquery, query: "%#{params[:query]}%")
     end
   end
-
 
   def new
     @compilation = Compilation.new

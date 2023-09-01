@@ -1,15 +1,15 @@
 
 <div class="super-container-flex">
   <h3><%= @compilation.name %> </h3><span>public: <%= @compilation.public %>
-      
+
   </span>
-  <%= form_with url: compilation_path, method: :get, class: "d-flex sizesearch" do %>
+  <%= form_with url: compilation_path, method: :get, class: "d-flex sizesearch ml-100" do %>
           <%= text_field_tag :query,
               params[:query],
-              class: "form-control",
+              class: "form-control super-search",
               placeholder: "Search a collection"
           %>
-          <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+          <%= submit_tag "Search", name: "", class: "super-button" %>
           <% end %>
 </div>
 <div class="super-container-flex">

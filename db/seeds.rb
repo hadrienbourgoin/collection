@@ -90,13 +90,25 @@ Tag.create!(word: "Sofubi")
 Tag.create!(word: "MTG")
 Tag.create!(word: "Blue")
 Tag.create!(word: "Movie")
+Tag.create!(word: "YuGiOh")
+Tag.create!(word: "Pokemon")
+Tag.create!(word: "Disney")
+Tag.create!(word: "Ferrari")
+Tag.create!(word: "politic")
+Tag.create!(word: "hystory")
+Tag.create!(word: "phylosophy")
+Tag.create!(word: "chess")
+Tag.create!(word: "rat")
+Tag.create!(word: "fish")
+Tag.create!(word: "toy")
+Tag.create!(word: "collec")
 
 ItemsTag.destroy_all
 3.times do
   ItemsTag.create!(item: Item.first,
                    tag: Tag.all.sample)
 end
-10.times do
+30.times do
   ItemsTag.create!(item: Item.all.sample,
                    tag: Tag.all.sample)
 end
