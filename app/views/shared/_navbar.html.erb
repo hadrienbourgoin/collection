@@ -11,6 +11,9 @@
     <ul class="navbar-nav me-auto nav-right">
       <div class="nav-links">
         <li class="nav-item active">
+          <%= link_to "Create a new collection", compilations_path(new: "true"), class: "nav-link" %>
+        </li>
+        <li class="nav-item active">
           <%= link_to "Browse Collections", compilations_path(browse: "true"), class: "nav-link" %>
         </li>
         <li class="nav-item active">
@@ -19,15 +22,16 @@
         <li class="nav-item active">
           <%= link_to "Activity feed", activityfeed_path, class: "nav-link" %>
         </li>
-        <li class="nav-item active">
-          <%= link_to "Create a new collection", compilations_path(new: "true"), class: "nav-link" %>
-        </li>
       </div>
       <div class="nav-user">
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
             <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <%= image_tag current_user.photo, class: "avatar", alt: "dropdown menu" %>
+              <% if current_user.photo.attached? %>
+                <%= image_tag current_user.photo, class: "avatar", alt: "dropdown menu" %>
+              <% else %>
+                <%= image_tag "avatar.jpg", class: "avatar", alt: "dropdown menu" %>
+              <% end %>
             </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <p class="username"><%= current_user.username %></p>

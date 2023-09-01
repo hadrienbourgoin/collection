@@ -1,0 +1,35 @@
+.cards-collection {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  margin: 8px;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.card-collection {
+  height: 400px;
+  color: white;
+  text-shadow: 1px 1px 5px black;
+  background-size: cover;
+  border-radius: 6px;
+}
+.card-collection:hover {
+  filter: brightness(85%);
+}
+
+.cards-item {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  margin: 8px;
+}
+
+.card-item {
+  height: 400px;
+  background-size: cover;
+  border-radius: 6px;
+}
+.card-item:hover {
+  filter: brightness(85%);
+}

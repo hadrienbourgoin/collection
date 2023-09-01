@@ -1,22 +1,24 @@
 class CompilationsController < ApplicationController
-  before_action :set_compilation, only: %i[show edit update]
+  before_action :set_compilation, only: %i[show edit update destroy]
 
   def index
-    @compilations = Compilation.all
-    if params[:browse] == 'true'
-      @browse = true
-      if user_signed_in?
-        @compilations = Compilation.all.reject { |compilation| current_user.compilations.include?(compilation) }
+    if user_signed_in?
+      @compilations = current_user.compilations
+      if params[:browse] == 'true'
+        @compilations = Compilation.where(public: true).all.reject { |compilation| current_user.compilations.include?(compilation) }
+      elsif params[:new] == 'true'
+        @compilations = []
       end
+    elsif params[:user_id]
+      @compilations = @compilations.where(user_id: params[:user_id])
     elsif params[:new] == 'true'
-      @compilations = []
-      @new = true
-      @must_log_in = true unless user_signed_in?
+      redirect_to new_user_session_path
+    else
+      @compilations = Compilation.all
     end
   end
 
   def show
-    @compilation.user = current_user
   end
 
   def new
@@ -27,6 +29,7 @@ class CompilationsController < ApplicationController
     @compilation = Compilation.new(compilation_params)
     @compilation.user = current_user
     if @compilation.save
+      save_items
       redirect_to compilation_path(@compilation)
     else
       render :new, status: :unprocessable_entity
@@ -39,6 +42,7 @@ class CompilationsController < ApplicationController
 
   def update
     if @compilation.update(compilation_params)
+      save_items
       redirect_to compilation_path(@compilation)
     else
       render :new, status: :unprocessable_entity
@@ -46,9 +50,14 @@ class CompilationsController < ApplicationController
   end
 
   def destroy
-    @compilation = Compilation.find(params[:id])
-    @compilation.destroy
-    redirect_to compilations_path, status: :see_other
+    @compilation.items.each do |item|
+      Cloudinary::Uploader.destroy("development/#{item.photo.key}")
+    end
+    if @compilation.destroy
+      redirect_to compilations_path, status: :see_other
+    else
+      render :back, status: :unprocessable_entity
+    end
   end
 
   def advancedsearch
@@ -73,5 +82,15 @@ class CompilationsController < ApplicationController
 
   def compilation_params
     params.require(:compilation).permit(:name, :description, :public)
+  end
+
+  def save_items
+    params[:compilation][:photos].each do |photo|
+      next unless %w[.jpg .jpeg .png .svg .gif].include?(File.extname(photo).downcase)
+
+      new_item = Item.new(name: photo.original_filename, compilation: @compilation, owned: true)
+      new_item.photo.attach(io: photo, filename: photo.original_filename, content_type: photo.content_type)
+      new_item.save
+    end
   end
 end

@@ -1,0 +1,16 @@
+<div class="container-vertical">
+  <div class="cards-collection">
+    <% @compilations.each do |compilation| %>
+      <%= link_to compilation_path(compilation) do %>
+        <% if compilation.items.count.positive? %>
+          <% image = compilation.items.first.photo.url %>
+        <% else %>
+          <% image = 'http://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/uia1q3kadakall0js4xw.png' %>
+        <% end %>
+        <div class="card-collection" style="background-image: url(<%= image %>)">
+          <h3><%= compilation.name %></h3>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

@@ -1,6 +1,8 @@
 class Compilation < ApplicationRecord
   has_many :items
   belongs_to :user
+  has_many :items, dependent: :destroy
+
 
   include AlgoliaSearch
 
@@ -16,4 +18,5 @@ class Compilation < ApplicationRecord
     attributes :name, :description
     searchableAttributes ['name', 'description']
   end
+
 end

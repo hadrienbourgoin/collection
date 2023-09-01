@@ -14,11 +14,4 @@ class User < ApplicationRecord
       Cloudinary::Uploader.destroy(self.photo.key)
     end
   end
-
-  include AlgoliaSearch
-
-  algoliasearch do
-    attributes :username
-    searchableAttributes ['username']
-  end
 end
