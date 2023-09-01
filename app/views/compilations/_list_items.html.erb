@@ -1,23 +1,33 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-sm-8">
-      <div id="collections">
-        <% if @items.count.positive? %>
-          <% @items.each do |item| %>
-              <div class="card-item" style="background-image: url(<%= item.photo.url %>)">
-                </div>
-          <% end %>
-        <% else %>
-          <div class="container-vertical">
-            <div class="cards-item">
-              <% @compilation.items.each do |item| %>
-                <div class="card-item" style="background-image: url(<%= item.photo.url %>)">
-                </div>
-              <% end %>
-            </div>
-          <div>
-        <% end %>
+<div class="container-vertical">
+  <div class="cards-item">
+    <% @compilation.items.each do |item| %>
+      <div class="card-item" style="background-image: url(<%= item.photo.url %>)" data-bs-toggle="modal" data-bs-target="#<%= item.id %>">
       </div>
-    </div>
+
+      <div class="modal fade" id="<%= item.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel"><%= item.name %></h1>
+              <button type="button" class="btn-close bg-trans btn-round" data-bs-dismiss="modal" aria-label="Close">x</button>
+            </div>
+            <div class="modal-flex d-flex">
+              <%= cl_image_tag(item.photo.key, class:"modal-image") %>
+              <div class="modal-text d-flex flex-column justify-content-between p-4">
+                <div>
+                  <p><b><%= item.compilation.user.username %></b></p>
+                  <p><%= item.description %></p>
+                  <p><% item.tags.each do |tag| %>
+                    <span class="blue-text action-pointer-hover">#<%= tag.word %></span>
+                  <% end %></p>
+                </div>
+                <%= item.created_at.strftime("%B-%d-%Y") %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <% end %>
   </div>
 </div>

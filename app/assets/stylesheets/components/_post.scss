@@ -15,7 +15,6 @@ background-color: white !important;
   background-size: cover;
   background-repeat: no-repeat;
   margin-left: 100px;
-  // background-color: white;
   width: 400px;
   height: 300px;
   border-radius: 10px !important;
@@ -23,13 +22,8 @@ background-color: white !important;
 
 
 .figmage{
-  // width: 300px !important;
-
   border: solid !important;
   border-color: rgb(241, 147, 32) !important;
-  // max-height: 300px;
-  // object-fit: cover;
-  // object-position: center;
 }
 
 .feedmage{
@@ -37,12 +31,18 @@ background-color: white !important;
   padding: 5px;
   font-weight: bold;
   margin-left: 100px;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 .feedtaille{
   margin-left: 5px !important;
   padding-top: 5px !important;
   margin-left: 100px;
+  color: black;
 }
 
 .posts{
@@ -59,13 +59,10 @@ background-color: white !important;
 
 .btn-right {
   margin-left: 240px !important;
-  margin-top: -5px !important;
-  margin-bottom: 10px !important;
 }
 
 .btn-right:hover{
   pointer-events: visible;
-  background-color: antiquewhite;
 }
 
 .write{
