@@ -60,6 +60,20 @@ class CompilationsController < ApplicationController
     end
   end
 
+  def advancedsearch
+    @compilations = []
+
+    if params[:query].present?
+      sql_subquery = <<~SQL
+        compilations.name ILIKE :query
+        OR compilations.description ILIKE :query
+        OR items.description ILIKE :query
+        OR items.name ILIKE :query
+      SQL
+      @compilations = Compilation.joins(:items).where(sql_subquery, query: "%#{params[:query]}%")
+    end
+  end
+
   private
 
   def set_compilation
