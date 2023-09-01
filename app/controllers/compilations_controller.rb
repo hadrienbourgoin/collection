@@ -19,7 +19,17 @@ class CompilationsController < ApplicationController
   end
 
   def show
+    @items = []
+
+    if params[:query].present?
+      sql_subquery = <<~SQL
+          items.description ILIKE :query
+        OR items.name ILIKE :query
+      SQL
+      @items = Item.all.where(sql_subquery, query: "%#{params[:query]}%")
+    end
   end
+
 
   def new
     @compilation = Compilation.new

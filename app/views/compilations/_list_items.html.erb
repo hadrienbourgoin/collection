@@ -1,8 +1,23 @@
-<div class="container-vertical">
-  <div class="cards-item">
-    <% @compilation.items.each do |item| %>
-      <div class="card-item" style="background-image: url(<%= item.photo.url %>)">
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-8">
+      <div id="collections">
+        <% if @items.count.positive? %>
+          <% @items.each do |item| %>
+              <div class="card-item" style="background-image: url(<%= item.photo.url %>)">
+                </div>
+          <% end %>
+        <% else %>
+          <div class="container-vertical">
+            <div class="cards-item">
+              <% @compilation.items.each do |item| %>
+                <div class="card-item" style="background-image: url(<%= item.photo.url %>)">
+                </div>
+              <% end %>
+            </div>
+          <div>
+        <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
-<div>
+</div>
