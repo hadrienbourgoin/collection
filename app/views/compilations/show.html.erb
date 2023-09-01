@@ -1,5 +1,16 @@
+
 <div class="super-container-flex">
-  <h3><%= @compilation.name %> </h3><span>public: <%= @compilation.public %></span>
+  <h3><%= @compilation.name %> </h3><span>public: <%= @compilation.public %>
+      
+  </span>
+  <%= form_with url: compilation_path, method: :get, class: "d-flex sizesearch" do %>
+          <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Search a collection"
+          %>
+          <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+          <% end %>
 </div>
 <div class="super-container-flex">
   <h6>owner: <%= @compilation.user.username %></h6>
@@ -7,7 +18,7 @@
 </div>
 
 <% if current_user == @compilation.user %>
-  <div class="super-container-flex">
+    <div class="d-flex justify-content-start">
     <%= link_to "Edit collection", edit_compilation_path(@compilation), class: "super-button" %>
     <%= link_to "Delete", "#{compilations_path}/#{@compilation.id}", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "super-button" %>
   </div>

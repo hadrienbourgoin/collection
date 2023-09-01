@@ -19,7 +19,17 @@ class CompilationsController < ApplicationController
   end
 
   def show
+    @items = []
+
+    if params[:query].present?
+      sql_subquery = <<~SQL
+          items.description ILIKE :query
+        OR items.name ILIKE :query
+      SQL
+      @items = Item.all.where(sql_subquery, query: "%#{params[:query]}%")
+    end
   end
+
 
   def new
     @compilation = Compilation.new
@@ -57,6 +67,20 @@ class CompilationsController < ApplicationController
       redirect_to compilations_path, status: :see_other
     else
       render :back, status: :unprocessable_entity
+    end
+  end
+
+  def advancedsearch
+    @compilations = []
+
+    if params[:query].present?
+      sql_subquery = <<~SQL
+        compilations.name ILIKE :query
+        OR compilations.description ILIKE :query
+        OR items.description ILIKE :query
+        OR items.name ILIKE :query
+      SQL
+      @compilations = Compilation.joins(:items).where(sql_subquery, query: "%#{params[:query]}%")
     end
   end
 

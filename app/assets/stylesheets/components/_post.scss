@@ -1,4 +1,5 @@
 .card_post{
+background-color: white !important;
   font-family: var(--bs-body-font-family);
   display: flex;
   flex-direction: column;
@@ -45,6 +46,7 @@
 }
 
 .posts{
+  background-color: rgb(238, 237, 235);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -69,17 +71,25 @@
 }
 
 .oklike{
+  text-align: center;
   border-radius: 50% !important;
   background-color: rgb(0, 0, 0);
   width: 25px;
   height: 25px;
-  margin-left:465px;
-  margin-top: 5px;
+  margin-left:465px !important;
+  margin-top: 5px !important;
 }
 
 .okload{
   width: 30px;
   height: 25px;
   margin-left:400px;
-  margin-top: -25px;
+  margin-top: -35px !important;
+}
+
+.okshare{
+  width: 30px;
+  height: 25px;
+  margin-left:110px;
+  margin-top: -25px !important;
 }
