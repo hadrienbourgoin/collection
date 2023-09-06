@@ -4,13 +4,8 @@
 .modal-image {
   margin: auto;
   display: block;
-  max-width: 700px;
-  width: 100%;
-  
-}
-
-.modal-img {
-  width: 70%;
+  max-width: 100%;
+  max-height: 85vh;
 }
 
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
@@ -18,6 +13,50 @@
   display: flex;
 }
 
-.colortext{
-
+.modal-text {
+  color: var(--bs-body-font-family);
+  flex-grow: 1;
 }
+
+.modal-content {
+  min-height: 85vh;
+}
+
+.img-container-modal {
+  background: rgba(0, 0, 0, 0.1);
+  min-height: 85vh;
+}
+
+.commentuser {
+  padding: 16px;
+  margin: 12px 12px 12px 0px;
+ 
+  align-items: center;
+  
+}
+.principalecomment{
+  display: flex;
+  flex-direction: column;
+}
+.usernameclass{
+  padding-top: 1%;
+  display: flex;
+  gap: 10px;
+}
+.commentuser{
+  display: flex;
+  font-size:15px;
+}
+
+.datecomment{
+  display: flex;
+  border-bottom: solid;
+  font-size:15px;
+  padding-bottom: 2%;
+  
+}
+
+
+
+
+

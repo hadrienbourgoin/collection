@@ -1,5 +1,16 @@
+
 <div class="super-container-flex">
-  <h3><%= @compilation.name %> </h3><span>public: <%= @compilation.public %></span>
+  <h3><%= @compilation.name %> </h3><span>public: <%= @compilation.public %>
+
+  </span>
+  <%= form_with url: compilation_path, method: :get, class: "d-flex sizesearch ml-100" do %>
+          <%= text_field_tag :query,
+              params[:query],
+              class: "form-control super-search",
+              placeholder: "Search a collection"
+          %>
+          <%= submit_tag "Search", name: "", class: "super-button" %>
+          <% end %>
 </div>
 <div class="super-container-flex">
   <h6>owner: <%= @compilation.user.username %></h6>
@@ -7,7 +18,7 @@
 </div>
 
 <% if current_user == @compilation.user %>
-  <div class="super-container-flex">
+    <div class="d-flex justify-content-start">
     <%= link_to "Edit collection", edit_compilation_path(@compilation), class: "super-button" %>
     <%= link_to "Delete", "#{compilations_path}/#{@compilation.id}", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "super-button" %>
   </div>
@@ -18,37 +29,5 @@
 <% else %>
   <% image = 'http://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/uia1q3kadakall0js4xw.png' %>
   <div class="card-item maxwidth-400" style="background-image: url(<%= image %>)">
-  </div>
-<% end %>
-
-<!-- Button trigger modal -->
-<% @compilation.items.each do |item| %>
-  <button type="button" class="btn super-button" data-bs-toggle="modal" data-bs-target="#<%= item.id %>">
-    <%= cl_image_tag(item.photo.key,width: 400, height: 300, crop: :fill) %>
-  </button>
-  <div class="modal fade" id="<%= item.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel"><%= item.name %></h1>
-          <button type="button" class="btn-close super-button" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-flex d-flex">
-          <div class="modal-img">
-            <%= cl_image_tag(item.photo.key,crop: :fill, class:"modal-image") %>
-          </div>
-          <div class="modal-text d-flex flex-column justify-content-between p-4">
-            <div>
-              <p><b><%= item.compilation.user.username %></b></p>
-              <p><%= item.description %></p>
-              <p class="colortext"><% item.tags.each do  |tag|   %>
-                #<%= tag.word %>
-              <% end %></p>
-            </div>
-            <%= item.created_at.strftime("%B-%d-%Y") %>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 <% end %>
