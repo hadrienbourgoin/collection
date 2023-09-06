@@ -1,0 +1,8 @@
+<div class="followuser" data-controller="follow-user">
+  <button type="button" class="btn super-button btn-right"
+          data-action="click->follow-user#followuser"
+          data-follow-user-target="button"
+          data-user-id= "<%= item.compilation.user.id %>"
+  ><%= Follow.where(follower_id: current_user.id, followed_id: item.compilation.user.id ).any? ? "UnFollow" : "Follow"  %></button>
+</div>
+

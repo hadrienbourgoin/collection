@@ -1,7 +1,6 @@
-
-<div class="posts" class=>
-  <% @items.each do |item|%>
-    <div class="card_post ">
+<div class="posts container-fluid">
+<% @items.each do |item|%>
+    <div class="card_post content">
       <div class="feedmage">
         <%= link_to compilations_path(user_id: item.compilation.user.id) do %>
           <div class="super-flex">
@@ -11,31 +10,47 @@
             </div>
           </div>
         <% end %>
-        <button type="button" class="btn super-button btn-right">follow</button>
+        <%= render partial: "followers/followers" , locals: { item: item } %>
       </div>
-        <div class="write">
-          <%= item.name %>
-          <%= item.description %>
-          <%= item.year %>
-        </div>
-      <a href= <%= compilation_path(item.compilation) %> >
-        <div class="figmage-container" style="background-image: url('<%= cl_image_path item.photo.key, class: "figmage" %>')"></div>
-      </a>
-        <div class="oklike btn-right">
-          <%= link_to compilations_path(user_id: item.compilation.user.id) do %>
-          <i class="fa-solid fa-thumbs-up"></i>
+      <div class="write">
+        <%= item.name %>
+        <%= item.description %>
+        <%= item.year %>
+      </div>
+      <div>
+        <div class="imgbck">
+          <%= link_to compilation_path(item.compilation) do %>
+            <div class="figmage-container" style="background-image: url('<%= cl_image_path item.photo.key, class: "figmage" %>')"></div>
           <% end %>
         </div>
-        <div class="okload">
-          <%= link_to compilations_path(user_id: item.compilation.user.id) do %>
-          <i class="fa-solid fa-download"></i>
-          <% end %>
+        <div class="boutonactivityfeed container">
+          <!-- modal -->
+          <div class="boutoncomment">
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#commentModal<%= item.id %>">
+              <i class="fa-regular fa-message"></i>
+            </button>
+          </div>
+
+          <div class="boutonlike">
+            <%= render partial: "likes/likes" , locals: { item: item } %>
+          </div>
         </div>
-        <div class="okshare">
-          <%= link_to compilations_path(user_id: item.compilation.user.id) do %>
-          <i class="fa-regular fa-share-from-square"></i>
-          <% end %>
+      </div>
+      
+
+      <div class="modal fade" id="commentModal<%= item.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Comment</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <%= render partial: "comments/form", locals: { item: item } %> 
+            </div>
+          </div>
         </div>
+      </div>
     </div>
   <% end %>
 </div>
