@@ -1,0 +1,31 @@
+<h1>Comment</h1>
+<%= simple_form_for [item, Comment.new] do |f| %>
+  <%= f.input :comment %>
+  <%= f.submit "Submit comment", class: "super-button" %>
+<% end %>
+
+  <% item.comments.each do |comment| %>
+    <div class="principalecomment">
+      <div class="usernameclass">
+          <% if user_signed_in? %>
+            <% if current_user.photo.attached? %>
+              <%= image_tag current_user.photo, class: "avatar", alt: "dropdown menu" %>
+            <% else %>
+            <%= image_tag "avatar.jpg", class: "avatar", alt: "dropdown menu" %>
+            <% end %>
+          <% end  %>
+          <h4>By <%= comment.user.username %></h4>
+      </div>
+      <div class="commentuser">  
+        comment: <%= comment.comment %>
+        <i class="em em-duck" aria-role="presentation" aria-label="DUCK"></i>
+        <i class="em em-tropical_drink" aria-role="presentation" aria-label="TROPICAL DRINK"></i>
+        <i class="em em-wave" aria-role="presentation" aria-label="WAVING HAND SIGN"></i>
+      </div>
+      <div class="datecomment">
+        On <%= comment.created_at.strftime("%B-%d-%Y at %T") %>
+      </div>
+    </div>
+  <% end %>
+
+
