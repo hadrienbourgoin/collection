@@ -12,7 +12,7 @@
               <% if current_user == @compilation.user %>
                 <%= link_to "Delete", item_path(item),
                 data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
-                class: "super-button" %>
+                class: "super-button mr-12" %>
                 <button class="super-button" data-action="click->toggle#toggle_item">Edit</button>
               <% end %>
               <button type="button" class="btn-close bg-trans btn-round" data-bs-dismiss="modal" aria-label="Close">x</button>

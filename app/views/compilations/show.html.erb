@@ -9,6 +9,8 @@
         class: "super-button" %>
         <button class="super-button h-56" data-action="click->toggle#toggle_collec">Edit</button>
         <button class="super-button h-56" data-action="click->toggle#toggle_item">Add item</button>
+      <% elsif user_signed_in? %>
+        <%= render partial: "followers/followers" , locals: { item: @compilation.items.first } %>
       <% end %>
     </div>
     <%= form_with url: compilation_path, method: :get, class: "d-flex sizesearch" do %>
@@ -17,7 +19,7 @@
           class: "form-control super-search",
           placeholder: "Search items"
       %>
-      <%= submit_tag "Search", name: "", class: "super-button" %>
+      <%= submit_tag "Search", name: "", class: "super-button mt-12" %>
     <% end %>
   </div>
   <div class="super-container-flex c-50">
