@@ -151,7 +151,7 @@ new_item = Item.create!(name: 'Unicorn Lamp',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/6v4wr4kyixzdatoinsy1q7gyv6gy'),
                       filename: new_item.name,
                       content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'Create your unicorn',
                         compilation: unicorns,
@@ -161,7 +161,7 @@ new_item = Item.create!(name: 'Create your unicorn',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/csdga8s62b5vjxm05ai5ohqb22ip'),
                       filename: new_item.name,
                       content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'Handsome licorn',
                         compilation: unicorns,
@@ -171,7 +171,7 @@ new_item = Item.create!(name: 'Handsome licorn',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/5myef6p9wm9jxmb1921r3rfaurap'),
                       filename: new_item.name,
                       content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'Unicorn 1',
                         compilation: unicorns,
@@ -181,7 +181,7 @@ new_item = Item.create!(name: 'Unicorn 1',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/n1dzgxh73jeyjo7iks67rzqnr155'),
                       filename: new_item.name,
                       content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'Star unicorn',
                         compilation: unicorns,
@@ -191,7 +191,7 @@ new_item = Item.create!(name: 'Star unicorn',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/sgpsxn0cpbmo5j74lc6ou336vp4t'),
                       filename: new_item.name,
                       content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'UniGod',
                         compilation: unicorns,
@@ -201,7 +201,7 @@ new_item = Item.create!(name: 'UniGod',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/iul3mswpamwne80qmvske2rh2ov2'),
                       filename: new_item.name,
                       content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'Fog unicorn',
                         compilation: unicorns,
@@ -211,7 +211,7 @@ new_item = Item.create!(name: 'Fog unicorn',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/1xci77hybm2xkemnvyxgamlmrf29'),
                       filename: new_item.name,
                       content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'Small one',
                         compilation: unicorns,
@@ -221,7 +221,7 @@ new_item = Item.create!(name: 'Small one',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/wk9d6kguerbkativbaf09uqu66le'),
                       filename: new_item.name,
                       content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'Photoshop',
                         compilation: unicorns,
@@ -231,7 +231,7 @@ new_item = Item.create!(name: 'Photoshop',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/8bn1jhr1s6dq2zp5c2zwadt0s2dg'),
                       filename: new_item.name,
                       content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'Unicorn and child',
                         compilation: unicorns,
@@ -241,7 +241,7 @@ new_item = Item.create!(name: 'Unicorn and child',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/cbsm6xqvgmmai2sw8k04prmnt9nz'),
                       filename: new_item.name,
                       content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'Unicorns castle',
                         compilation: unicorns,
@@ -251,7 +251,7 @@ new_item = Item.create!(name: 'Unicorns castle',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/jxriifda0ueepvo9wz8kbpys8oj8'),
                       filename: new_item.name,
                       content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 print "Unicorns done\n\n"
 
 # Cars
@@ -263,7 +263,6 @@ new_item = Item.create!(name: 'Blue car',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/qlb4ymz893682ztszsz14jc9oitr'),
                       filename: new_item.name,
                       content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
 ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'a car',
@@ -294,7 +293,7 @@ new_item = Item.create!(name: 'also red car',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/2cakds40nvx89lwfhc8g16tjxu90'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 ItemsTag.create!(item: new_item, tag: red)
 
 new_item = Item.create!(name: 'grey car',
@@ -305,7 +304,7 @@ new_item = Item.create!(name: 'grey car',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/wuumgnggcf31k8356b3et03btra8'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'black car',
   compilation: cars,
@@ -315,7 +314,7 @@ new_item = Item.create!(name: 'black car',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/xicgppn92l9s1wgxl4g10fkni95y'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'amely car',
   compilation: cars,
@@ -325,7 +324,7 @@ new_item = Item.create!(name: 'amely car',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/tct4w8fwsmh3rwhjrxnd9i2qqvx1'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 ItemsTag.create!(item: new_item, tag: red)
 
 new_item = Item.create!(name: 'carrr',
@@ -336,7 +335,7 @@ new_item = Item.create!(name: 'carrr',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/w1jdsvr671b6mb3lfj3obome0ss0'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'White car',
   compilation: cars,
@@ -346,7 +345,7 @@ new_item = Item.create!(name: 'White car',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/es94gi26oq6xgob83p1oouesdpmh'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: "Lambo",
   compilation: cars,
@@ -369,7 +368,7 @@ new_item = Item.create!(name: 'Black hat',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/a6cwjscxjiu5fs318b04c5yojt28'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'Black hat',
   compilation: hats,
@@ -379,7 +378,7 @@ new_item = Item.create!(name: 'Black hat',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/b6e3xaawm9wplwbtaya1cua1kgat'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'Another black hat',
   compilation: hats,
@@ -389,7 +388,7 @@ new_item = Item.create!(name: 'Another black hat',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/0r65x56xwx8f07e8jqsez5i2zkx8'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'Gray bob',
   compilation: hats,
@@ -399,7 +398,7 @@ new_item = Item.create!(name: 'Gray bob',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/0hds12squdw7zmjbs1d5ac8wsujq'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'Summer hat',
   compilation: hats,
@@ -409,7 +408,7 @@ new_item = Item.create!(name: 'Summer hat',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/qd88hczm1agcdol78re8wyfhl2f5'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'Haut de forme',
   compilation: hats,
@@ -419,7 +418,7 @@ new_item = Item.create!(name: 'Haut de forme',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/3k1frav8zqc2br6o4m2qcbly7kk7'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'fox bob',
   compilation: hats,
@@ -429,7 +428,7 @@ new_item = Item.create!(name: 'fox bob',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/gfgjiit40p5or2li4u494k5q14ca'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'Cool hat',
   compilation: hats,
@@ -439,7 +438,7 @@ new_item = Item.create!(name: 'Cool hat',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/1rsw7kr16rf0pwysvbqk7h47fp0z'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 print "Hats done\n\n"
 
 # Castles
@@ -451,7 +450,7 @@ new_item = Item.create!(name: 'Castle 1',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/4bxk6rdor6cz1a00jnk5jo6jjexa'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'Castle 2',
   compilation: castles,
@@ -461,7 +460,7 @@ new_item = Item.create!(name: 'Castle 2',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/37fcxmacajahhiggimhjat65q7bx'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'Huge Castle',
   compilation: castles,
@@ -471,7 +470,7 @@ new_item = Item.create!(name: 'Huge Castle',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/r4jympglsmdhkh154ss4md0ty2sf'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'Old castle',
   compilation: castles,
@@ -481,7 +480,7 @@ new_item = Item.create!(name: 'Old castle',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/ztpcstny62jggb0ral7b98ens454'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'Lake castle',
   compilation: castles,
@@ -491,7 +490,7 @@ new_item = Item.create!(name: 'Lake castle',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/zanzlstoxiww7w02z8akj9qi7as5'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'Alala castle',
   compilation: castles,
@@ -501,7 +500,7 @@ new_item = Item.create!(name: 'Alala castle',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/pm2xaod0wywdg9c7lv0m035nhxzv'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'Already castle',
   compilation: castles,
@@ -511,7 +510,7 @@ new_item = Item.create!(name: 'Already castle',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/z6aitwvznc4jrlew5bz30er6k5tp'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'Castle 8',
   compilation: castles,
@@ -521,7 +520,7 @@ new_item = Item.create!(name: 'Castle 8',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/5c7io26zspf8xyw5gnbwnio26e7f'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: castles,
@@ -531,7 +530,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/b3y2jxhy55zvaxf7lkve3uo62wc8'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'German castle',
   compilation: castles,
@@ -541,7 +540,7 @@ new_item = Item.create!(name: 'German castle',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/ph273aoycrccqqqcs2bmjvrg6e8c'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'Sunset castle',
   compilation: castles,
@@ -551,7 +550,7 @@ new_item = Item.create!(name: 'Sunset castle',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/458c0d79fci7bkno9cxa4ldojd75'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'Color castle',
   compilation: castles,
@@ -561,7 +560,7 @@ new_item = Item.create!(name: 'Color castle',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/swonzcotalt8tw65r7k5jnvselwk'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: castles,
@@ -571,7 +570,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/1dq9iizz2bt0hr7h2zd6irz3n9vc'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: castles,
@@ -581,7 +580,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/px2t5jqgfyhisk9r7a0i53sdldhr'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 print "Castles done\n\n"
 
 # Rocks
@@ -593,7 +592,7 @@ new_item = Item.create!(name: 'Colored rocks',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/z8t6s4x82du1n81af68sdh2fjx0w'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: rocks,
@@ -603,7 +602,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/x23b4ssqfpjkj29f61ovamjphlkq'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: rocks,
@@ -613,7 +612,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/a9r693gc97g9o6vov7ii5hwxsnfb'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: rocks,
@@ -623,7 +622,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/5wbmj11ioow31t8hmbtx4e6iue8n'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: rocks,
@@ -633,7 +632,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/n1v9tzdtf5zd7berxyoemvnx78ji'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: rocks,
@@ -643,7 +642,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/v694qnsg3sigiygxpu7pc9ang45q'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: rocks,
@@ -653,7 +652,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/56s6gn113i420r81w992jpfs34co'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: "The Rock",
   compilation: rocks,
@@ -676,7 +675,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/e7606d03j5vwor1gkb06yltq5j6n'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: stamps,
@@ -686,7 +685,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/2jz0xtu3br0bj6j29tb58nisojwr'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: stamps,
@@ -696,7 +695,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/zi8eo6chat2oitky44w0m6gx7bez'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: stamps,
@@ -706,7 +705,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/wkra1p7thzs99k6drhfm937f7x4z'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: stamps,
@@ -716,7 +715,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/z9zhny1zm7u8t4egqrn9e30qydas'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: stamps,
@@ -726,7 +725,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/w94fpl2zyvd73gl6l2f5aame8d1b'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: stamps,
@@ -736,7 +735,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/mt3ufldb0hagnybszofaus0gpqbe'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: stamps,
@@ -746,7 +745,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/lb97cmz2arc2he0vu6d3y9sza6n3'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: stamps,
@@ -756,7 +755,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/ygwpklrzjjmlan5twpljeqcapfs6'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: stamps,
@@ -766,7 +765,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/2uiyg206xqiiyzss3sy3te33nfnx'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 print "Stamps done\n\n"
 
 # Plants
@@ -778,7 +777,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/o9h2hc60cjgnw1wtmuqdun7ofhyc'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: plants,
@@ -788,7 +787,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/vtrgcgdmmlr5n7n2yaab12vl64s8'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: plants,
@@ -798,7 +797,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/pz8ahzhl1xxj0wmlcqa1x3zqh6ye'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: plants,
@@ -808,7 +807,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/jgemlu60rw3scsmxggigccu34zbd'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: plants,
@@ -818,7 +817,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/4wpsi81nggp7n9c6l0gcmje18mym'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: plants,
@@ -828,7 +827,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/l00q9e366dk5w60xdyermlb6y795'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: plants,
@@ -838,7 +837,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/9sbfli25reecf8tkge5d27qr8kp8'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: plants,
@@ -848,7 +847,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/p345njvflupcp6zrzb8yhvgk3ieb'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: plants,
@@ -858,7 +857,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/g7jo2mmf541lj424y2lsozlvyz11'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 print "Plants done\n\n"
 
 # Robinets
@@ -870,7 +869,7 @@ new_item = Item.create!(name: 'Golden faucet',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/z9ocvitcv7qsqk43988lc25aeo1f'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'Black faucet',
   compilation: robinets,
@@ -880,7 +879,7 @@ new_item = Item.create!(name: 'Black faucet',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/t7cmfluab0xr2m48xhdoovjzi0ru'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'Water faucet',
   compilation: robinets,
@@ -890,7 +889,7 @@ new_item = Item.create!(name: 'Water faucet',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/z8z738m9bmpgtsu0blu1cvk7w001'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'Robinet faucet',
   compilation: robinets,
@@ -900,7 +899,7 @@ new_item = Item.create!(name: 'Robinet faucet',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/r0fcmdpjhbse95cplfjuh140dybx'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'Faucet faucet',
   compilation: robinets,
@@ -910,7 +909,7 @@ new_item = Item.create!(name: 'Faucet faucet',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/yedwxyrb1lqscr8tnntfewoua9p4'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'Faucet robinet',
   compilation: robinets,
@@ -920,7 +919,7 @@ new_item = Item.create!(name: 'Faucet robinet',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/357dfvcopq4m2c03wqlq4teaxt4z'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'Robinet robinet',
   compilation: robinets,
@@ -930,7 +929,7 @@ new_item = Item.create!(name: 'Robinet robinet',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/qnx9ey5tukw2udvf9w3arridu1b6'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'Robinet qui fonctionne pas',
   compilation: robinets,
@@ -940,7 +939,7 @@ new_item = Item.create!(name: 'Robinet qui fonctionne pas',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/gy08rhoklait2yyg3deytuw5153d'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 print "Robinet done\n\n"
 
 # Sneakers
@@ -952,7 +951,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/p95mgh9q9cdresjjtbqmi4a9xgmp'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: sneakers,
@@ -962,7 +961,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/wao8mdv1tgl9u9l3bdhq81a1egsa'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: sneakers,
@@ -972,7 +971,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/a6x0oj822fijcbm6ldh1r197t1pd'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: sneakers,
@@ -982,7 +981,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/h35ceka6xxjxjvort6ulbudpv8i9'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: sneakers,
@@ -992,7 +991,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/oaoqe6pffwwz3n5m216lw7ctqjmw'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: sneakers,
@@ -1002,7 +1001,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/d1ebqbe6310mbx1r9u4ef0xl6day'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: sneakers,
@@ -1012,7 +1011,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/03o533cnkp1v9wo3m1x2s5cmuz0q'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: sneakers,
@@ -1022,7 +1021,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/lvboblvkgzq5igrlb694fr0tyq1v'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: sneakers,
@@ -1032,7 +1031,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/81no42h75qg527m3f059soyryqa9'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: sneakers,
@@ -1042,7 +1041,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/l6j2mvvgj89h679e3jpr2ght8wmb'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: "Sneaker",
   compilation: sneakers,
@@ -1099,7 +1098,7 @@ new_item = Item.create!(name: 'Sonic and Spyro',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/bkydexn9ms4d8ghsqz53025urv8v'),
 filename: new_item.name,
 content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 ItemsTag.create!(item: new_item, tag: banger)
 
 new_item = Item.create!(name: 'Fear effect',
@@ -1110,7 +1109,7 @@ new_item = Item.create!(name: 'Fear effect',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/mreo2dtxizv5vxghe93vvksohjv7'),
 filename: new_item.name,
 content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 horror = Tag.create!(word: 'horror')
 ItemsTag.create!(item: new_item, tag: horror)
 ItemsTag.create!(item: new_item, tag: vig)
@@ -1123,7 +1122,7 @@ new_item = Item.create!(name: 'The Legend of Dragoon',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/8puuedhsud7pa9rdz05mv2jg4abg'),
 filename: new_item.name,
 content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 adventure = Tag.create!(word: 'adventure')
 ItemsTag.create!(item: new_item, tag: adventure)
 ItemsTag.create!(item: new_item, tag: vig)
@@ -1136,7 +1135,7 @@ new_item = Item.create!(name: 'Mega Man Legends',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/ci3w0uc9285xyzi71c5044hm09c2'),
 filename: new_item.name,
 content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 action = Tag.create!(word: 'action')
 ItemsTag.create!(item: new_item, tag: action)
 ItemsTag.create!(item: new_item, tag: vig)
@@ -1149,7 +1148,7 @@ new_item = Item.create!(name: 'Rival Schools',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/kftj2ajpzbsgssihsbwzqtfv8x95'),
 filename: new_item.name,
 content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 combat = Tag.create!(word: 'combat')
 ItemsTag.create!(item: new_item, tag: combat)
 school = Tag.create!(word: 'school')
@@ -1164,7 +1163,7 @@ new_item = Item.create!(name: 'Grandia',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/dh4eiym4s6x86neilmlsq86at8gd'),
 filename: new_item.name,
 content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 rpg = Tag.create!(word: 'rpg')
 ItemsTag.create!(item: new_item, tag: rpg)
 ItemsTag.create!(item: new_item, tag: combat)
@@ -1179,7 +1178,7 @@ new_item = Item.create!(name: 'Rayman And Ridge Racer',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/mrhcwm9b4nal1olw1qs4dazdpum1'),
 filename: new_item.name,
 content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 platform = Tag.create!(word: 'platform')
 ItemsTag.create!(item: new_item, tag: platform)
 ItemsTag.create!(item: new_item, tag: vig)
@@ -1192,7 +1191,7 @@ new_item = Item.create!(name: 'Overboard',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/8dax5mhp94nqt6pnm4r8tmzwy8i6'),
 filename: new_item.name,
 content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 boat = Tag.create!(word: 'boat')
 ItemsTag.create!(item: new_item, tag: boat)
 ItemsTag.create!(item: new_item, tag: vig)
@@ -1205,7 +1204,7 @@ new_item = Item.create!(name: '3 games',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/1xgtqq7loeotshottkdz4bme2plm'),
 filename: new_item.name,
 content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 ItemsTag.create!(item: new_item, tag: action)
 ItemsTag.create!(item: new_item, tag: vig)
 
@@ -1217,7 +1216,7 @@ new_item = Item.create!(name: 'Crash Bandicoot PS1',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/q3e72yyp3u9xlfjykuxea7wudkle'),
 filename: new_item.name,
 content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 ItemsTag.create!(item: new_item, tag: vig)
 ItemsTag.create!(item: new_item, tag: action)
 ItemsTag.create!(item: new_item, tag: platform)
@@ -1230,7 +1229,7 @@ new_item = Item.create!(name: 'Playstation 1',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/df5wm874hcwreurvkcpiww51rude'),
 filename: new_item.name,
 content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 ItemsTag.create!(item: new_item, tag: vig)
 console = Tag.create!(word: 'console')
 ItemsTag.create!(item: new_item, tag: console)
@@ -1318,7 +1317,7 @@ new_item = Item.create!(name: 'Godzilla Collection Logo',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/6fcqcexfei38j60e4pxs3qjvdnnv'),
 filename: new_item.name,
 content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'Banana Oil King Godzilla',
  compilation: figures,
@@ -1380,7 +1379,7 @@ new_item = Item.create!(name: 'Goro',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/br0xqo1yo32a786s0o1ruwkwgere'),
 filename: new_item.name,
 content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 ItemsTag.create!(item: new_item, tag: windup)
 
 new_item = Item.create!(name: 'Gorosaurus',
@@ -1404,7 +1403,7 @@ new_item = Item.create!(name: 'Small Godzilla by Popy',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/1z81sqq3791a4iejo77j8fp1zwqj'),
 filename: new_item.name,
 content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'Marusan Vintage Godzilla Robot',
  compilation: figures,
@@ -1414,7 +1413,7 @@ new_item = Item.create!(name: 'Marusan Vintage Godzilla Robot',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/ni4zg0zl8qx4k85nf6sfogkdr7jm'),
 filename: new_item.name,
 content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 godzilla = Item.create!(name: "Godzilla",
  compilation: figures,
@@ -1473,7 +1472,7 @@ new_item = Item.create!(name: 'Springleaf drum',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/i7iq2pg69mrt27a2om5yphgenw60'),
                       filename: new_item.name,
                       content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 ItemsTag.create!(item: new_item, tag: mtg)
 ItemsTag.create!(item: new_item, tag: collec)
 
@@ -1551,7 +1550,7 @@ new_item = Item.create!(name: 'Walking ballista',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/sdghp7q8ty0xs3u5sqabaiayre4c'),
                       filename: new_item.name,
                       content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 ItemsTag.create!(item: new_item, tag: mtg)
 ItemsTag.create!(item: new_item, tag: collec)
 
@@ -1600,7 +1599,7 @@ new_item = Item.create!(name: 'Lorcana Illumineer\'s Trove',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/rwtos1vcbi54hxcem1exyski4qcw'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 ItemsTag.create!(item: new_item, tag: disney)
 
 new_item = Item.create!(name: 'cards',
@@ -1611,7 +1610,7 @@ new_item = Item.create!(name: 'cards',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/evl2ra6qwfkc00ydlcc6d09gbhou'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 ItemsTag.create!(item: new_item, tag: disney)
 
 new_item = Item.create!(name: 'Starter decks',
@@ -1622,7 +1621,7 @@ new_item = Item.create!(name: 'Starter decks',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/l3f4dqkbw962vqj1ln5gtpbi64br'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 ItemsTag.create!(item: new_item, tag: disney)
 
 new_item = Item.create!(name: 'Lorcana products',
@@ -1643,7 +1642,7 @@ new_item = Item.create!(name: 'Paper cards',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/5bqjj0xwn736nq2ljnfatm0foy1k'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: 'Legendary',
   compilation: lorcana,
@@ -1653,7 +1652,7 @@ new_item = Item.create!(name: 'Legendary',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/brgc5avf1wupsg1z6opj0hkg4wnr'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 ItemsTag.create!(item: new_item, tag: disney)
 
 new_item = Item.create!(name: 'Booster Box',
@@ -1674,7 +1673,7 @@ new_item = Item.create!(name: 'Maleficent and Mickey',
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/4rvcdj0k4h7gasqzemndbzozm1gg'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 ItemsTag.create!(item: new_item, tag: disney)
 
 new_item = Item.create!(name: 'lorcana',
@@ -1709,7 +1708,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/8ttjmn9o0jlxxyzg7oimcnbs8l0p'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: warhammer,
@@ -1719,7 +1718,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/wvqa5u7orr84bbdtyla1c49wm0hy'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: warhammer,
@@ -1729,7 +1728,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/di9m0wi3dlyu4y27ah75iut8zn7q'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: warhammer,
@@ -1739,7 +1738,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/ozkulhrlebgs8pi6ieyi59wg1lmv'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: warhammer,
@@ -1749,7 +1748,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/7b6qc4qjfougtkcd25jod8v5ep3l'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: warhammer,
@@ -1759,7 +1758,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/zet03kmgcv24x4qfn7galhwd6zu1'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: warhammer,
@@ -1769,7 +1768,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/zet03kmgcv24x4qfn7galhwd6zu1'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: warhammer,
@@ -1779,7 +1778,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/s6umw462sgq2e4l81rbnoukrhm7u'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: warhammer,
@@ -1789,7 +1788,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/9vui2rdikgfybl3nnxwihbmkebmb'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: warhammer,
@@ -1799,7 +1798,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/w6m402o347ag46bjr0txa6r3z6ir'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: warhammer,
@@ -1809,7 +1808,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/f06obytrplyk7fqeew65ethxb7w3'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 
 new_item = Item.create!(name: Faker::Name.first_name,
   compilation: warhammer,
@@ -1819,7 +1818,7 @@ new_item = Item.create!(name: Faker::Name.first_name,
 new_item.photo.attach(io: URI.open('https://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/lwrugxu14am130e50mggk9ddockv'),
   filename: new_item.name,
   content_type: 'image/jpg')
-ItemsTag.create!(item: new_item, tag: Tag.all.sample)
+ItemsTag.create!(item: new_item, tag: blue)
 print "Warhammer done\n\n"
 
 # Paintings
