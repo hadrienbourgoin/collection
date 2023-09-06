@@ -4,8 +4,8 @@
 
 import { application } from "./application"
 
-import FollowuserController from "./follow_user_controller"
-application.register("follow-user", FollowuserController)
+import FollowUserController from "./follow_user_controller"
+application.register("follow-user", FollowUserController)
 
 import LikeButtonController from "./like_button_controller"
 application.register("like-button", LikeButtonController)
