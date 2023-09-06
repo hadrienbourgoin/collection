@@ -40,3 +40,12 @@
 .super-dnone {
   display: none;
 }
+
+.super-center {
+  text-align: center;
+  
+  * {
+    text-decoration: none;
+    color: black;
+  }
+}

@@ -1,7 +1,7 @@
 <div class="buttonsearch">
   <form id="imageForm">
-    <label id="file-input-label" for="imageInput">
-      <i class="fa-solid fa-file-import fa-2xl me-2"" style="color: #015cf9;"></i>
+    <label id="file-input-label" for="imageInput" class="mr-12">
+      <i class="fa-solid fa-file-import fa-2xl me-2" style="color: #015cf9;"></i>
       Upload here
     </label>
     <input type="file" id="imageInput" accept="image/*">
@@ -43,7 +43,7 @@
 
     document.querySelector(".loader").classList.remove("d-none");
 
-    const apiKey = await fetch("https://oauth2.googleapis.com/token", {
+const apiKey = await fetch("https://oauth2.googleapis.com/token", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

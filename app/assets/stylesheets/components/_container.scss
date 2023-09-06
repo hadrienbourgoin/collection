@@ -53,3 +53,13 @@
 .border-top {
   border-top: 10px black;
 }
+
+.section {
+  flex-grow: 1;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
