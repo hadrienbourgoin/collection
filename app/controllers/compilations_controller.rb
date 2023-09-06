@@ -16,8 +16,22 @@ class CompilationsController < ApplicationController
     else
       @compilations = Compilation.all.order('updated_at DESC')
     end
-    if params[:user_id]
+    if params[:user_id].present?
       @compilations = Compilation.where(public: true).where(user_id: params[:user_id]).order('updated_at DESC')
+    end
+    if params[:query].present?
+      sql_subquery = <<~SQL
+        compilations.name ILIKE :query
+        OR compilations.description ILIKE :query
+      SQL
+      compil = Compilation.all.order('updated_at DESC').where(sql_subquery, query: "%#{params[:query]}%")
+      user_by_username = User.find_by(username: params[:query])
+      if !user_by_username.nil?
+        compil_by_user = Compilation.all.order('updated_at DESC').where(user: user_by_username)
+        @compilations = (compil + compil_by_user).uniq
+      else
+        @compilations = compil
+      end
     end
   end
 
@@ -28,8 +42,16 @@ class CompilationsController < ApplicationController
       sql_subquery = <<~SQL
           items.description ILIKE :query
         OR items.name ILIKE :query
+        OR CAST(items.year AS VARCHAR(10)) ILIKE :query
       SQL
-      @items = Item.all.order('updated_at DESC').where(sql_subquery, query: "%#{params[:query]}%")
+      @items = @compilation.items.order('updated_at DESC').where(sql_subquery, query: "%#{params[:query]}%")
+      @items = @items.to_a
+
+      tag_by_word = Tag.find_by(word: params[:query])
+      @compilation.items.each do |item|
+        @items << item if item.tags.include?(tag_by_word)
+      end
+      @items = @items.uniq
     end
   end
 
@@ -62,9 +84,6 @@ class CompilationsController < ApplicationController
   end
 
   def destroy
-    @compilation.items.each do |item|
-      Cloudinary::Uploader.destroy("development/#{item.photo.key}")
-    end
     if @compilation.destroy
       redirect_to compilations_path, status: :see_other
     else
@@ -109,7 +128,7 @@ class CompilationsController < ApplicationController
 
   def save_items
     params[:compilation][:photos].each do |photo|
-      next unless %w[.jpg .jpeg .png .svg .gif].include?(File.extname(photo).downcase)
+      next unless %w[.jpg .jpeg .png .svg .gif .webp].include?(File.extname(photo).downcase)
 
       new_item = Item.new(name: photo.original_filename, compilation: @compilation, owned: true)
       new_item.photo.attach(io: photo, filename: photo.original_filename, content_type: photo.content_type)

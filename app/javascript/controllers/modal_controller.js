@@ -6,21 +6,11 @@ export default class extends Controller {
   connect() {
   }
 
-  // open() {
-  //   const modal = this.modalTarget;
-  //   document.body.classList.add("modal-open");
-  //   modal.setAttribute("style", "display: block;");
-  //   modal.classList.add("show");
-  //   document.body.innerHTML += '<div class="modal-backdrop fade show"></div>';
-  // }
-
   open() {
     if (!this.modal.isOpened) {
       this.modal.open()
-      
     }
   }
-
 
   close() {
     const modal = this.modalTarget;

@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_compilation, only: %i[index new create update ]
+  before_action :set_compilation, only: %i[new create edit update]
 
   def activity_feed
     if user_signed_in?
@@ -41,10 +41,25 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    @item.compilation = compilation_id
+    @item.compilation = @compilation
 
     if @item.save
-      redirect_to item_path(@item)
+      photo = params[:item][:photo]
+      unless photo.nil?
+        @item.photo.purge
+        @item.photo.attach(io: photo, filename: photo.original_filename, content_type: photo.content_type)
+      end
+
+      tags = params[:item][:tags].split
+      if tags.count.positive?
+        tags.each do |tag|
+          new_tag = Tag.find_by(word: tag)
+          new_tag = Tag.create(word: tag) if new_tag.nil?
+          ItemsTag.create(item: @item, tag: new_tag)
+        end
+      end
+
+      redirect_to compilation_path(@item.compilation)
     else
       render :new, status: :unprocessable_entity
     end
@@ -56,8 +71,36 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
-    @item.update(item_params)
-    redirect_to item_path(@item)
+
+    if @item.update(item_params)
+      photo = params[:item][:photo]
+      unless photo.nil?
+        @item.photo.purge
+        @item.photo.attach(io: photo, filename: photo.original_filename, content_type: photo.content_type)
+      end
+
+      tags = params[:item][:tags].split
+      if tags.count.positive?
+        tags.each do |tag|
+          new_tag = Tag.find_by(word: tag)
+          new_tag = Tag.create(word: tag) if new_tag.nil?
+          ItemsTag.create(item: @item, tag: new_tag)
+        end
+      end
+
+      redirect_to compilation_path(@item.compilation)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+    if @item.destroy
+      redirect_to compilation_path(@item.compilation), status: :see_other
+    else
+      render :back, status: :unprocessable_entity
+    end
   end
 
   private
@@ -67,6 +110,6 @@ class ItemsController < ApplicationController
   end
 
   def set_compilation
-    @compilation = Compilation.find([:compilation_id])
+    @compilation = Compilation.find(params[:compilation_id])
   end
 end

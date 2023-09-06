@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   devise_for :users
-  root to: "compilations#index"
-  resources :compilations, path: :collections
+  root to: 'compilations#index'
+  resources :compilations, path: :collections do
+    resources :items, only: %i[edit update new create]
+  end
+  resources :items, only: %i[destroy]
   get '/advancedsearch', to: 'compilations#advancedsearch'
   get '/activityfeed', to: 'items#activity_feed'
   resources :items, only: %i[] do
