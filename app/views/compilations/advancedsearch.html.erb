@@ -22,80 +22,94 @@
 <script type="text/javascript">
   document.getElementById('imageInput').addEventListener('change', function(event) {
     const imageInput = document.getElementById('imageInput');
-          const file = imageInput.files[0];
+    const file = imageInput.files[0];
 
-          if (file) {
-            const reader = new FileReader();
+    if (file) {
+      const reader = new FileReader();
 
-            reader.onload = (event) => {
-                const base64String = event.target.result;
-                // Store the base64String in a variable
-                const encodedImage = base64String.match(/,(.*)$/)[1];
-                document.getElementById('encoded').dataset.toto = encodedImage;
-                document.getElementById('file-input-label').innerText = file.name;
-            }
-            reader.readAsDataURL(file);
-          }
+      reader.onload = (event) => {
+          const base64String = event.target.result;
+          // Store the base64String in a variable
+          const encodedImage = base64String.match(/,(.*)$/)[1];
+          document.getElementById('encoded').dataset.toto = encodedImage;
+          document.getElementById('file-input-label').innerText = file.name;
+      }
+      reader.readAsDataURL(file);
+    }
+  });
+
+  document.getElementById('imageForm').addEventListener('submit', async function(event) {
+    event.preventDefault();
+
+    document.querySelector(".loader").classList.remove("d-none");
+
+    const apiKey = await fetch("https://oauth2.googleapis.com/token", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        "client_id": "<%= ENV["GCLOUD_CLIENT_ID"] %>",
+        "client_secret": "<%= ENV["GCLOUD_CLIENT_SECRET"] %>",
+        "refresh_token": "<%= ENV["GCLOUD_REFRESH_TOKEN"] %>",
+        "quota_project_id": "<%= ENV["GCLOUD_QUOTA_PROJECT"] %>",
+        "grant_type": "refresh_token"
+      })
+      })
+      .then(response => response.json())
+      .then(data => data.access_token)
+      
+      const apiUrl = `https://vision.googleapis.com/v1/images:annotate`;
+
+      try {
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json, charset=utf-8',
+          'Authorization': `Bearer ${apiKey}`,
+          'x-goog-user-project': 'gca-supply-web-app'
+          },
+          body: JSON.stringify({
+            "requests": [
+              {
+                  "image": {
+                      "content": `${document.getElementById('encoded').dataset.toto}`
+                    },
+                  "features": [
+                    {
+                      "type": "WEB_DETECTION"
+                    }
+                  ]
+                }
+              ]
+          })
         });
 
-        document.getElementById('imageForm').addEventListener('submit', async function(event) {
-          event.preventDefault();
+        const data = await response.json();
+        document.querySelector(".loader").classList.add("d-none")
 
-          document.querySelector(".loader").classList.remove("d-none")
+        const webDetection = data.responses[0].webDetection;
 
-        const apiKey = 'ya29.a0AfB_byBYrMhviuKNrP5ynqhGi8i0bpZs8BixShMuteJl-oI33IGB2_Mh8CNZJIJXwjCm7wdDS91k5FeyO2pmkfawd4Y2PTrh-2EjEAGNl8DyRompjDY0F7LeTGIcvrkW1QVG8VXL_omoTYRM0GScYDg4B7jAVjdwRlQq1S_daCgYKAQQSARISFQHsvYlsyxmSjPns5WekOO_wMVQMuw0175'
-          // const imageUrl = encodeURIComponent('localhost:5500/ad.png');  // Replace with the actual URL
-          const apiUrl = `https://vision.googleapis.com/v1/images:annotate`;
+        const label = webDetection.bestGuessLabels[0].label
+        document.getElementById('label').innerHTML = label.charAt(0).toUpperCase() + label.slice(1);
+        if(webDetection.visuallySimilarImages) {
+          webDetection.visuallySimilarImages.forEach((image) => {
+            const img = document.createElement('img');
+            img.classList.add("response-image")
+            img.src = image.url;
+            document.getElementById('images').appendChild(img);
+          });
+        } else {
+          webDetection.partialMatchingImages.forEach((image) => {
+            const img = document.createElement('img');
+            img.classList.add("response-image")
+            img.src = image.url;
+            document.getElementById('images').appendChild(img);
+          });
 
-            try {
-            const response = await fetch(apiUrl, {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json, charset=utf-8',
-                'Authorization': `Bearer ${apiKey}`,
-                'x-goog-user-project': 'gca-supply-web-app'
-                },
-                body: JSON.stringify({
-                  "requests": [
-                    {
-                        "image": {
-                            "content": `${document.getElementById('encoded').dataset.toto}`
-                          },
-                        "features": [
-                          {
-                            "type": "WEB_DETECTION"
-                          }
-                        ]
-                      }
-                    ]
-                })
-              });
-
-              const data = await response.json();
-              document.querySelector(".loader").classList.add("d-none")
-
-              const webDetection = data.responses[0].webDetection;
-
-              const label = webDetection.bestGuessLabels[0].label
-              document.getElementById('label').innerHTML = label.charAt(0).toUpperCase() + label.slice(1);
-              if(webDetection.visuallySimilarImages) {
-                webDetection.visuallySimilarImages.forEach((image) => {
-                  const img = document.createElement('img');
-                  img.classList.add("response-image")
-                  img.src = image.url;
-                  document.getElementById('images').appendChild(img);
-                });
-              } else {
-                webDetection.partialMatchingImages.forEach((image) => {
-                  const img = document.createElement('img');
-                  img.classList.add("response-image")
-                  img.src = image.url;
-                  document.getElementById('images').appendChild(img);
-                });
-
-                 }
-            } catch (error) {
-              console.error('Error:', error);
           }
-});
+      } catch (error) {
+        console.error('Error:', error);
+    }
+  });
 </script>
