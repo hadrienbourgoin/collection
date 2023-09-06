@@ -84,6 +84,17 @@ class CompilationsController < ApplicationController
       SQL
       @compilations = Compilation.joins(:items).where(sql_subquery, query: "%#{params[:query]}%")
     end
+
+    if params[:image_url].present?
+      params = {
+        q: "",
+        engine: "google_lens",
+        url: "https://i.imgur.com/HBrB8p0.png", # to change dynamically
+        api_key: ENV["SERP_API_KEY"]
+      }
+      search = GoogleSearch.new(params)
+      @image_results = search.get_hash[:visual_matches]
+    end
   end
 
   private
