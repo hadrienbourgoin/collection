@@ -1,5 +1,5 @@
 .card_post{
-background-color: white !important;
+  background-color: white !important;
   font-family: var(--bs-body-font-family);
   display: flex;
   flex-direction: column;
@@ -20,8 +20,7 @@ background-color: white !important;
   border-radius: 10px !important;
 }
 
-
-.figmage{
+.figmage {
   border: solid !important;
   border-color: rgb(241, 147, 32) !important;
 }
@@ -31,18 +30,12 @@ background-color: white !important;
   padding: 5px;
   font-weight: bold;
   margin-left: 100px;
-  align-items: center;
-
-  a {
-    text-decoration: none;
-  }
 }
 
 .feedtaille{
   margin-left: 5px !important;
   padding-top: 5px !important;
   margin-left: 100px;
-  color: black;
 }
 
 .posts{
@@ -51,7 +44,7 @@ background-color: white !important;
   flex-direction: column;
   align-items: center;
   position: relative;
-  margin: 0px 0px 0px 0px; /* top | right | bottom | left */
+  margin: 10px 0px 10px 0px; /* top | right | bottom | left */
   overflow-y: scroll;
   scroll-timeline: squareTimeline vertical;
   position: relative;
@@ -59,10 +52,13 @@ background-color: white !important;
 
 .btn-right {
   margin-left: 240px !important;
+  margin-top: -5px !important;
+  margin-bottom: 10px !important;
 }
 
 .btn-right:hover{
   pointer-events: visible;
+  background-color: antiquewhite;
 }
 
 .write{
@@ -70,38 +66,9 @@ background-color: white !important;
   margin-bottom: 5px !important;
 }
 
-.oklike{
-  text-align: center;
-  border-radius: 50% !important;
-  background-color: rgb(0, 0, 0);
-  width: 25px;
-  height: 25px;
-  margin-left:465px !important;
-  margin-top: 5px !important;
-
-  i {
-    color: white;
-  }
-}
-
-.okload{
-  width: 30px;
-  height: 25px;
-  margin-left:400px;
-  margin-top: -25px !important;
-
-  i {
-    color: black;
-  }
-}
-
 .okshare{
   width: 30px;
   height: 25px;
-  margin-left: 110px;
+  margin-left:110px;
   margin-top: -25px !important;
-
-  i {
-    color: black;
-  }
 }

@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  as: MyString
+  followed_id: MyString
+  ,user: one
+  as: MyString
+  follower_id: MyString
+
+two:
+  user: two
+  as: MyString
+  followed_id: MyString
+  ,user: two
+  as: MyString
+  follower_id: MyString

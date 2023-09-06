@@ -12,4 +12,10 @@ Rails.application.routes.draw do
   resources :items, only: %i[destroy]
   get '/advancedsearch', to: 'compilations#advancedsearch'
   get '/activityfeed', to: 'items#activity_feed'
+  resources :items, only: %i[] do
+    resources :comments, only: %i[ new create show ]
+    resources :likes, only: %i[create destroy]
+  end
+  resources :follows, only: %i[create destroy]
+  
 end

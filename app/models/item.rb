@@ -12,4 +12,7 @@ class Item < ApplicationRecord
   def delete_photo
     photo.purge
   end
+  
+  has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
 end

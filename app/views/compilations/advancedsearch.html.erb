@@ -1,34 +1,101 @@
-<div class="row justify-content-center">
-  <div class="col-sm-8 my-3">
-    <%= form_with url: advancedsearch_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-            params[:query],
-            class: "form-control mr-12",
-            placeholder: "Search a collection"
-        %>
-      <%= submit_tag "Search", name: "", class: "super-button" %>
-    <% end %>
-  </div>
+<div class="buttonsearch">
+  <form id="imageForm">
+    <label id="file-input-label" for="imageInput">
+      <i class="fa-solid fa-file-import fa-2xl me-2"" style="color: #015cf9;"></i>
+      Upload here
+    </label>
+    <input type="file" id="imageInput" accept="image/*">
+    <button class="super-button" type="submit">Search</button>
+  </form>
 </div>
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-sm-8">
-      <div id="collections">
-        <% if @compilations.count.positive? %>
-          <% @compilations.each do |collection| %>
-            <h4>"name"<%= collection.name %></h4>
-            <p>"desc"<%= collection.description %></p>
-            <p>"use"<%= collection.user.username %></p>
-            <% collection.items.each do |item| %>
-              "name item"<%= item.name %>
-              "desc item"<%= item.description %>
-              "owne item"<%= item.owned %>
-            <% end %>
-          <% end %>
-        <% else %>
-          <em>Sorry, no collections found.</em>
-        <% end %>
-      </div>
-    </div>
-  </div>
+
+    <div id="encoded"></div>
+    <div id="label"></div>
+    <div id="images"></div>
+
+<div class="loader d-none">
+  <span class="loader__element"></span>
+  <span class="loader__element"></span>
+  <span class="loader__element"></span>
 </div>
+
+<script type="text/javascript">
+  document.getElementById('imageInput').addEventListener('change', function(event) {
+    const imageInput = document.getElementById('imageInput');
+          const file = imageInput.files[0];
+
+          if (file) {
+            const reader = new FileReader();
+
+            reader.onload = (event) => {
+                const base64String = event.target.result;
+                // Store the base64String in a variable
+                const encodedImage = base64String.match(/,(.*)$/)[1];
+                document.getElementById('encoded').dataset.toto = encodedImage;
+                document.getElementById('file-input-label').innerText = file.name;
+            }
+            reader.readAsDataURL(file);
+          }
+        });
+
+        document.getElementById('imageForm').addEventListener('submit', async function(event) {
+          event.preventDefault();
+
+          document.querySelector(".loader").classList.remove("d-none")
+
+        const apiKey = 'ya29.a0AfB_byBYrMhviuKNrP5ynqhGi8i0bpZs8BixShMuteJl-oI33IGB2_Mh8CNZJIJXwjCm7wdDS91k5FeyO2pmkfawd4Y2PTrh-2EjEAGNl8DyRompjDY0F7LeTGIcvrkW1QVG8VXL_omoTYRM0GScYDg4B7jAVjdwRlQq1S_daCgYKAQQSARISFQHsvYlsyxmSjPns5WekOO_wMVQMuw0175'
+          // const imageUrl = encodeURIComponent('localhost:5500/ad.png');  // Replace with the actual URL
+          const apiUrl = `https://vision.googleapis.com/v1/images:annotate`;
+
+            try {
+            const response = await fetch(apiUrl, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json, charset=utf-8',
+                'Authorization': `Bearer ${apiKey}`,
+                'x-goog-user-project': 'gca-supply-web-app'
+                },
+                body: JSON.stringify({
+                  "requests": [
+                    {
+                        "image": {
+                            "content": `${document.getElementById('encoded').dataset.toto}`
+                          },
+                        "features": [
+                          {
+                            "type": "WEB_DETECTION"
+                          }
+                        ]
+                      }
+                    ]
+                })
+              });
+
+              const data = await response.json();
+              document.querySelector(".loader").classList.add("d-none")
+
+              const webDetection = data.responses[0].webDetection;
+
+              const label = webDetection.bestGuessLabels[0].label
+              document.getElementById('label').innerHTML = label.charAt(0).toUpperCase() + label.slice(1);
+              if(webDetection.visuallySimilarImages) {
+                webDetection.visuallySimilarImages.forEach((image) => {
+                  const img = document.createElement('img');
+                  img.classList.add("response-image")
+                  img.src = image.url;
+                  document.getElementById('images').appendChild(img);
+                });
+              } else {
+                webDetection.partialMatchingImages.forEach((image) => {
+                  const img = document.createElement('img');
+                  img.classList.add("response-image")
+                  img.src = image.url;
+                  document.getElementById('images').appendChild(img);
+                });
+
+                 }
+            } catch (error) {
+              console.error('Error:', error);
+          }
+});
+</script>

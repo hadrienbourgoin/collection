@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_29_121238) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_05_132102) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +42,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_121238) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "comments", force: :cascade do |t|
+    t.text "comment"
+    t.bigint "user_id", null: false
+    t.bigint "item_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_comments_on_item_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
   create_table "compilations", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -50,6 +60,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_121238) do
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_compilations_on_user_id"
+  end
+
+  create_table "follows", force: :cascade do |t|
+    t.bigint "followed_id", null: false
+    t.bigint "follower_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["followed_id"], name: "index_follows_on_followed_id"
+    t.index ["follower_id"], name: "index_follows_on_follower_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -70,6 +89,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_121238) do
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_items_tags_on_item_id"
     t.index ["tag_id"], name: "index_items_tags_on_tag_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "item_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_likes_on_item_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "tags", force: :cascade do |t|
@@ -96,8 +124,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_121238) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "comments", "items"
+  add_foreign_key "comments", "users"
   add_foreign_key "compilations", "users"
+  add_foreign_key "follows", "users", column: "followed_id"
+  add_foreign_key "follows", "users", column: "follower_id"
   add_foreign_key "items", "compilations"
   add_foreign_key "items_tags", "items"
   add_foreign_key "items_tags", "tags"
+  add_foreign_key "likes", "items"
+  add_foreign_key "likes", "users"
 end

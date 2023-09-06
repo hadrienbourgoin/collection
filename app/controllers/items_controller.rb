@@ -2,7 +2,37 @@ class ItemsController < ApplicationController
   before_action :set_compilation, only: %i[new create edit update]
 
   def activity_feed
-    @items = Item.all.order('updated_at DESC')
+    if user_signed_in?
+      @follows = Follow.where(follower: current_user)
+      users = []
+      # verification si on follow un user
+      if @follows.count.positive? 
+        @follows.each do |follow| 
+          users << follow.followed
+        end
+        compilations = []
+        # recuperation des collection de chaque user
+        users.each do |user|
+          user.compilations.each do |compilation|
+            compilations << compilation
+          end
+        end
+        # recuperation des items de chaque user
+        items_array = []
+        compilations.each do |compilation|
+          unless compilation.items.nil?
+            compilation.items.each do |item|
+              items_array << item
+            end
+          end
+        end
+        @items = items_array
+      else
+        @items = Item.all.order("updated_at DESC")  
+      end
+    else
+      @items = Item.all.order("updated_at DESC")
+    end
   end
 
   def new
