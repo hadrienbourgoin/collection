@@ -1,8 +1,8 @@
 <% if @compilations.count.positive? %>
   <%= render "list_collections", compilation: @compilations %>
 <% else %>
-  <% if user_signed_in? %>
-    <%= render "form", compilation: @compilation = Compilation.new %>
+  <% if user_signed_in? && !params[:query].present? %>
+    <%= render "form_collec", compilation: @compilation = Compilation.new %>
   <% else %>
     <%= render "list_collections", compilation: @compilations %>
   <% end %>

@@ -3,7 +3,7 @@
     <%= f.input :name %>
     <%= f.input :description, as: :text %>
     <%= f.input :public, as: :boolean %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true, accept:'image/*' } %>
-    <%= f.submit "Create Collection", class: "super-button" %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true, accept:'image/*' }, label: "Add items" %>
+    <%= f.submit "Save Collection", class: "super-button" %>
   <% end %>
 </div>

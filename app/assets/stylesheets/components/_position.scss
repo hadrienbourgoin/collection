@@ -4,11 +4,39 @@
 .mb-32 {
   margin-bottom: 32px;
 }
+.ml-100 {
+  margin-left: 100px;
+}
+.mr-12 {
+  margin-right: 12px;
+}
+.mt-12 {
+  margin-top: 12px;
+}
 
 .maxwidth-400 {
   max-width: 400px;
+  overflow-wrap: break-word;
+}
+.maxwidth-300 {
+  max-width: 300px;
 }
 
-.ml-100 {
-  margin-left: 100px;
+.h-56 {
+  height: 56px;
+}
+
+.w-100 {
+  width: 100%;
+}
+.w-100-i {
+  width: 100% !important;
+
+  * {
+    width: 100% !important;
+  }
+}
+
+.super-dnone {
+  display: none;
 }

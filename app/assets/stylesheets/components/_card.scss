@@ -1,6 +1,6 @@
 .cards-collection {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   margin: 8px;
 
   a {
@@ -9,11 +9,18 @@
 }
 
 .card-collection {
-  height: 400px;
-  color: white;
-  text-shadow: 1px 1px 5px black;
+  height: 350px;
   background-size: cover;
-  border-radius: 6px;
+  background-position: center top;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.05);
+  margin: 4px;
+
+  h3 {
+    color: white;
+    padding-top: 50%;
+    text-shadow: 1px 1px 5px black;
+  }
 }
 .card-collection:hover {
   filter: brightness(85%);
@@ -21,14 +28,16 @@
 
 .cards-item {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   margin: 8px;
 }
 
 .card-item {
-  height: 400px;
+  height: 350px;
   background-size: cover;
-  border-radius: 6px;
+  background-position: center top;
+  background-color: rgba(0, 0, 0, 0.05);
+  margin: 4px;
 }
 .card-item:hover {
   filter: brightness(85%);

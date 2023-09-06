@@ -1,0 +1,17 @@
+<div class="super-form">
+  <%= simple_form_for [@compilation, @item] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :photo, as: :file, input_html: { accept:'image/*' } %>
+    <%= f.input :description, as: :text %>
+    <% tags_value = '' %>
+    <% if @item.tags.to_a.count.positive? %>
+      <% @item.tags.each do |tag| %>
+        <% tags_value += " #{tag.word}" %>
+      <% end %>
+    <% end %>
+    <%= f.input :tags, as: :string, placeholder: 'tags separated by spaces', input_html: { value: tags_value } %>
+    <%= f.input :year, as: :integer %>
+    <%= f.input :owned, as: :boolean %>
+    <%= f.submit "Save item", class: "super-button" %>
+  <% end %>
+</div>

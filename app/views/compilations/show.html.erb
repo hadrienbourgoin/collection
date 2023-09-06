@@ -1,33 +1,49 @@
 
-<div class="super-container-flex">
-  <h3><%= @compilation.name %> </h3><span>public: <%= @compilation.public %>
-
-  </span>
-  <%= form_with url: compilation_path, method: :get, class: "d-flex sizesearch ml-100" do %>
-          <%= text_field_tag :query,
-              params[:query],
-              class: "form-control super-search",
-              placeholder: "Search a collection"
-          %>
-          <%= submit_tag "Search", name: "", class: "super-button" %>
-          <% end %>
-</div>
-<div class="super-container-flex">
-  <h6>owner: <%= @compilation.user.username %></h6>
-  <p><%= @compilation.description %></p>
-</div>
-
-<% if current_user == @compilation.user %>
-    <div class="d-flex justify-content-start">
-    <%= link_to "Edit collection", edit_compilation_path(@compilation), class: "super-button" %>
-    <%= link_to "Delete", "#{compilations_path}/#{@compilation.id}", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "super-button" %>
+<div data-controller="toggle">
+  <div class="super-container-flex c-50 space-between">
+    <div class="super-container-flex">
+      <h3><%= @compilation.name %></h3>
+      <% if current_user == @compilation.user %>
+        <%= link_to "Delete", "#{compilations_path}/#{@compilation.id}",
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+        class: "super-button" %>
+        <button class="super-button h-56" data-action="click->toggle#toggle_collec">Edit</button>
+        <button class="super-button h-56" data-action="click->toggle#toggle_item">Add item</button>
+      <% end %>
+    </div>
+    <%= form_with url: compilation_path, method: :get, class: "d-flex sizesearch" do %>
+      <%= text_field_tag :query,
+          params[:query],
+          class: "form-control super-search",
+          placeholder: "Search items"
+      %>
+      <%= submit_tag "Search", name: "", class: "super-button" %>
+    <% end %>
   </div>
-<% end %>
-
-<% if @compilation.items.count.positive? %>
-  <%= render "list_items", compilation: @items %>
-<% else %>
-  <% image = 'http://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/uia1q3kadakall0js4xw.png' %>
-  <div class="card-item maxwidth-400" style="background-image: url(<%= image %>)">
+  <div class="super-container-flex c-50">
+    <%= link_to compilations_path(user_id: @compilation.user.id) do %>
+      <%= image_tag @compilation.user.photo, class: "avatar" %>
+    <% end %>
+    <h6><%= link_to @compilation.user.username, compilations_path(user_id: @compilation.user.id) %>:</h6>
+    <p><%= @compilation.description %></p>
   </div>
-<% end %>
+
+  <% if current_user == @compilation.user %>
+    <div class="d-flex justify-content-start c-50">
+      <div data-toggle-target="form_collec" class="d-none w-100">
+        <%= render "form_collec", compilation: @compilation %>
+      </div>
+      <div data-toggle-target="form_item" class="d-none w-100">
+        <%= render "form_item", item: @item = Item.new, compilation: @compilation %>
+      </div>
+    </div>
+  <% end %>
+
+  <% if @compilation.items.count.positive? %>
+    <%= render "list_items", items: @items %>
+  <% else %>
+    <% image = 'http://res.cloudinary.com/dhs2x2lmi/image/upload/v1/development/uia1q3kadakall0js4xw.png' %>
+    <div class="card-item maxwidth-400" style="background-image: url(<%= image %>)">
+    </div>
+  <% end %>
+<div>

@@ -3,7 +3,7 @@
     <%= form_with url: advancedsearch_path, method: :get, class: "d-flex" do %>
       <%= text_field_tag :query,
             params[:query],
-            class: "form-control",
+            class: "form-control mr-12",
             placeholder: "Search a collection"
         %>
       <%= submit_tag "Search", name: "", class: "super-button" %>

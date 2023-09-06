@@ -1,27 +1,42 @@
 <div class="container-vertical">
-  <div class="cards-item">
+  <div class="cards-item c-50">
     <% @items.each do |item| %>
-      <div class="card-item" style="background-image: url(<%= item.photo.url %>)" data-bs-toggle="modal" data-bs-target="#<%= item.id %>">
-      </div>
+        <div class="card-item" style="background-image: url(<%= item.photo.url %>)" data-bs-toggle="modal" data-bs-target="#<%= item.id %>">
+        </div>
 
       <div class="modal fade" id="<%= item.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
-          <div class="modal-content">
+          <div class="modal-content" data-controller="toggle">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel"><%= item.name %></h1>
+              <h1 class="modal-title fs-5 mr-12" id="exampleModalLabel"><%= item.name %></h1>
+              <% if current_user == @compilation.user %>
+                <%= link_to "Delete", item_path(item),
+                data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+                class: "super-button" %>
+                <button class="super-button" data-action="click->toggle#toggle_item">Edit</button>
+              <% end %>
               <button type="button" class="btn-close bg-trans btn-round" data-bs-dismiss="modal" aria-label="Close">x</button>
             </div>
             <div class="modal-flex d-flex">
               <div class="img-container-modal">
-                <%= cl_image_tag(item.photo.key, class:"modal-image") %>
+                <% unless item.photo.key.nil? %>
+                  <%= cl_image_tag(item.photo.key, class:"modal-image") %>
+                <% end %>
               </div>
               <div class="modal-text d-flex flex-column justify-content-between p-4">
                 <div>
-                  <p><b><%= item.compilation.user.username %></b></p>
+                  <% unless item.year.nil? %>
+                    <p>year: <%= item.year %></p>
+                  <% end %>
                   <p><%= item.description %></p>
                   <p><% item.tags.each do |tag| %>
-                    <span class="blue-text action-pointer-hover">#<%= tag.word %></span>
+                    <%= link_to compilation_path(query: tag.word) do %>
+                      <span class="blue-text action-pointer-hover">#<%= tag.word %></span>
+                    <% end %>
                   <% end %></p>
+                  <div data-toggle-target="form_item" class="d-none w-100-i">
+                    <%= render "form_item", item: @item = item, compilation: @compilation = item.compilation %>
+                  </div>
                 </div>
                 <%= item.created_at.strftime("%B-%d-%Y") %>
               </div>
