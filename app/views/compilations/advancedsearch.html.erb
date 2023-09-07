@@ -58,7 +58,7 @@ const apiKey = await fetch("https://oauth2.googleapis.com/token", {
       })
       .then(response => response.json())
       .then(data => data.access_token)
-      
+
       const apiUrl = `https://vision.googleapis.com/v1/images:annotate`;
 
       try {
@@ -93,6 +93,7 @@ const apiKey = await fetch("https://oauth2.googleapis.com/token", {
         const label = webDetection.bestGuessLabels[0].label
         document.getElementById('label').innerHTML = label.charAt(0).toUpperCase() + label.slice(1);
         if(webDetection.visuallySimilarImages) {
+          document.getElementById('images').innerHTML = '';
           webDetection.visuallySimilarImages.forEach((image) => {
             const img = document.createElement('img');
             img.classList.add("response-image")
@@ -100,6 +101,7 @@ const apiKey = await fetch("https://oauth2.googleapis.com/token", {
             document.getElementById('images').appendChild(img);
           });
         } else {
+          document.getElementById('images').innerHTML = '';
           webDetection.partialMatchingImages.forEach((image) => {
             const img = document.createElement('img');
             img.classList.add("response-image")

@@ -10,7 +10,9 @@
             </div>
           </div>
         <% end %>
-        <%= render partial: "followers/followers" , locals: { item: item } %>
+        <% if user_signed_in? %>
+          <%= render partial: "followers/followers" , locals: { item: item } %>
+        <% end %>
       </div>
       <div class="write">
         <%= item.name %>
@@ -36,7 +38,7 @@
           </div>
         </div>
       </div>
-      
+
 
       <div class="modal fade" id="commentModal<%= item.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -46,7 +48,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <%= render partial: "comments/form", locals: { item: item } %> 
+              <%= render partial: "comments/form", locals: { item: item } %>
             </div>
           </div>
         </div>

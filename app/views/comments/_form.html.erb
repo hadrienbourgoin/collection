@@ -3,8 +3,8 @@
   <%= f.input :comment %>
   <%= f.submit "Submit comment", class: "super-button" %>
 <% end %>
-
-  <% item.comments.each do |comment| %>
+  <% comments = item.comments.sort_by(&:updated_at).reverse %>
+  <% comments.each do |comment| %>
     <div class="principalecomment">
       <div class="usernameclass">
           <% if user_signed_in? %>
@@ -16,16 +16,11 @@
           <% end  %>
           <h4>By <%= comment.user.username %></h4>
       </div>
-      <div class="commentuser">  
-        comment: <%= comment.comment %>
-        <i class="em em-duck" aria-role="presentation" aria-label="DUCK"></i>
-        <i class="em em-tropical_drink" aria-role="presentation" aria-label="TROPICAL DRINK"></i>
-        <i class="em em-wave" aria-role="presentation" aria-label="WAVING HAND SIGN"></i>
+      <div class="commentuser">
+        <%= comment.comment %>
       </div>
       <div class="datecomment">
         On <%= comment.created_at.strftime("%B-%d-%Y at %T") %>
       </div>
     </div>
   <% end %>
-
-
