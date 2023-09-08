@@ -1,17 +1,17 @@
 <h1>Comment</h1>
-<%= simple_form_for [item, Comment.new] do |f| %>
-  <%= f.input :comment %>
-  <%= f.submit "Submit comment", class: "super-button" %>
+<% if user_signed_in? %>
+  <%= simple_form_for [item, Comment.new] do |f| %>
+    <%= f.input :comment %>
+    <%= f.submit "Submit comment", class: "super-button" %>
+  <% end %>
 <% end %>
   <% comments = item.comments.sort_by(&:updated_at).reverse %>
   <% comments.each do |comment| %>
     <div class="principalecomment">
       <div class="usernameclass">
           <% if user_signed_in? %>
-            <% if current_user.photo.attached? %>
-              <%= image_tag current_user.photo, class: "avatar", alt: "dropdown menu" %>
-            <% else %>
-            <%= image_tag "avatar.jpg", class: "avatar", alt: "dropdown menu" %>
+            <%= link_to compilations_path(user_id: item.compilation.user.id) do %>
+              <%= image_tag item.compilation.user.photo, class: "avatar" %>
             <% end %>
           <% end  %>
           <h4>By <%= comment.user.username %></h4>

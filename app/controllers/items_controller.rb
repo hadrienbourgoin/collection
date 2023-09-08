@@ -6,8 +6,8 @@ class ItemsController < ApplicationController
       @follows = Follow.where(follower: current_user)
       users = []
       # verification si on follow un user
-      if @follows.count.positive? 
-        @follows.each do |follow| 
+      if @follows.count.positive?
+        @follows.each do |follow|
           users << follow.followed
         end
         compilations = []
@@ -28,7 +28,7 @@ class ItemsController < ApplicationController
         end
         @items = items_array
       else
-        @items = Item.all.order("updated_at DESC")  
+        @items = Item.all.order("updated_at DESC")
       end
     else
       @items = Item.all.order("updated_at DESC")
