@@ -1,9 +1,11 @@
 <div class="boutonlike" data-controller="like-button">
-        <button class="btn oklike <%= "bg-blue" if item.likes.where(user: current_user).any? %>"
-                data-action="click->like-button#changeColor"
-                data-like-button-target="button"
-                data-item-id= "<%= item.id %>">
-                <i class="fa fa-solid fa-thumbs-up"></i>
-        </button>
-        <div id="results" data-like-button-target="results"></div>
+  <button class="btn oklike <%= "bg-blue" if item.likes.where(user: current_user).any? %>"
+          data-action="click->like-button#changeColor"
+          data-like-button-target="button"
+          data-item-id= "<%= item.id %>">
+          <i class="fa fa-solid fa-thumbs-up"></i>
+  </button>
+  <div id="results" data-like-button-target="results">
+    <%= item.likes.count %>
+  </div>
 </div>

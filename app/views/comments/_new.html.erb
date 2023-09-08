@@ -1,5 +1,7 @@
 <h1>Comment</h1>
-<%= simple_form_for [item, @comment] do |f| %>
-  <%= f.input :comment %>
-  <%= f.submit "Submit comment", class: "btn btn-primary" %>
+<% if user_signed_in? %>
+  <%= simple_form_for [item, @comment] do |f| %>
+    <%= f.input :comment %>
+    <%= f.submit "Submit comment", class: "btn btn-primary" %>
+  <% end %>
 <% end %>

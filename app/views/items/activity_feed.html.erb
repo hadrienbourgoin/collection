@@ -31,6 +31,9 @@
             <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#commentModal<%= item.id %>">
               <i class="fa-regular fa-message"></i>
             </button>
+            <div>
+              <%= item.comments.count %>
+            </div>
           </div>
 
           <div class="boutonlike">
@@ -38,7 +41,6 @@
           </div>
         </div>
       </div>
-
 
       <div class="modal fade" id="commentModal<%= item.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
