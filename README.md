@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+https://www.collection.codes/
 
-Things you may want to cover:
+Web app to manage your collections online:
+Collection, your collections, our services
 
-* Ruby version
+Ruby on Rails (7.0)
 
-* System dependencies
+Postgres SQL
+main: Users, Collections, Items
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Use Cloudinary to store images
+Deployed on Heroku
